@@ -206,6 +206,164 @@ class Music extends CI_Controller {
         echo $this->load->view('music/MusicList/detailList',$data, TRUE);
     }
     
+    public function getCollectedRecording(){
+        $SubCategory = $this->input->get('SubCategory',TRUE);
+        //echo $detailsID;
+        
+        $data['results'] = $this->NazrulSong_M->getCollectedRecording($SubCategory);
+        echo $this->load->view('music/Collected/nazrul_sangeet_v',$data, TRUE);
+    }
+    
+    public function Collected(){
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $data = array();
+        $data['page'] = 'Nazrul Sangeet | Collected Recording';
+        $data['page_title'] = 'Nazrul Sangeet | Collected Recording';
+        $page_title = 'Nazrul Sangeet';
+        
+        
+        // init params
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['results2'] = $this->NazrulSong_M->getCollectedRecording($page_title);
+        $total_records = sizeof($data['results2']);
+        
+        $config['base_url'] = base_url() . 'Music/Collected/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data['results'] = $this->NazrulSong_M->get_current_page_records_CollectedRecording($page_title,$limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+        }
+        
+        $this->pagination->initialize($data);
+        
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Collected/nazrul_sangeet_c', $data, TRUE);
+        
+        $this->load->view('index', $data);
+        
+    }
+    
+    public function CollectedRabindraSangeet(){
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $data = array();
+        $data['page'] = 'Rabindra Sangeet | Collected Recording';
+        $data['page_title'] = 'Rabindra Sangeet | Collected Recording';
+        $page_title = 'Rabindra Sangeet';
+        
+        
+        // init params
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['results'] = $this->NazrulSong_M->getCollectedRecording($page_title);
+        $total_records = sizeof($data['results']);
+        
+        $config['base_url'] = base_url() . 'Music/CollectedRabindraSangeet/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data['results'] = $this->NazrulSong_M->get_current_page_records_CollectedRecording($page_title,$limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+        }
+        
+        $this->pagination->initialize($data);
+        
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Collected/nazrul_sangeet_c', $data, TRUE);
+        
+        $this->load->view('index', $data);
+        
+    }
+    
+    public function CollectedModernBengaliSong(){
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $data = array();
+        $data['page'] = 'Modern Bengali Song | Collected Recording';
+        $data['page_title'] = 'Modern Bengali Song | Collected Recording';
+        $page_title = 'Modern Bengali Song';
+        
+        
+        // init params
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['results'] = $this->NazrulSong_M->getCollectedRecording($page_title);
+        $total_records = sizeof($data['results']);
+        
+        $config['base_url'] = base_url() . 'Music/CollectedModernBengaliSong/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data['results'] = $this->NazrulSong_M->get_current_page_records_CollectedRecording($page_title,$limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+        }
+        
+        $this->pagination->initialize($data);
+        
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Collected/nazrul_sangeet_c', $data, TRUE);
+        
+        $this->load->view('index', $data);
+        
+    }
+    
     public function getDupSongDetailsList(){
         $dupID = $this->input->get('dupID',TRUE);
         
