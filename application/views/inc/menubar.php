@@ -28,7 +28,7 @@
                         MUSIC
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Full Album</a>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" >Full Album</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('music'); ?>">Nazrul Sangeet</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/RabindraSangeet'); ?>">Rabindra Sangeet</a>
@@ -37,9 +37,9 @@
                         </li>
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Collected Recording</a>
                             <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="<?php echo base_url('music'); ?>">Nazrul Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/RabindraSangeet'); ?>">Rabindra Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/ModernBengaliSong'); ?>">Modern Bengali Song</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/Collected'); ?>">Nazrul Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/CollectedRabindraSangeet'); ?>">Rabindra Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/CollectedModernBengaliSong'); ?>">Modern Bengali Song</a>
                             </ul>
                         </li>
 						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Mixed Album</a>
@@ -158,3 +158,32 @@
         </div>
     </nav>
 </div>
+
+<script src="/ferozabegum/asset/js/jquery.min.js"></script>
+<script src="/ferozabegum/asset/js/modulesupportjs/feroza.js"></script>
+<script type="text/javascript">
+        $(document).ready(function () {
+        
+        $("#CollectedRecording").click(function(){
+        var baseUrl = "<?php echo base_url(); ?>"; 
+        //$("#dupSong").empty();
+        var SubCategory = $(this).attr('id');
+        console.log(SubCategory);
+        alert(SubCategory);
+        $.ajax({
+            url: baseUrl + "Music/getCollectedRecording",
+            type: "get",
+            data: "SubCategory=" + SubCategory,
+            cache: false,
+            success: function (data) {
+                console.log(data);
+                //$("#dupSong").append(data);
+                console.log("success");
+                }
+            });
+        });
+
+      
+        
+    });
+</script>

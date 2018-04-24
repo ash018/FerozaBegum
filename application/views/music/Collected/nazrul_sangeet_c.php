@@ -25,7 +25,7 @@
             <div class="container"> 
                 <div class="row">
                     <div class="musicheader">
-                        <h4>Nazrul Sangeet</h4>
+                        <h4><?php echo $page_title?></h4>
                     </div>
                 </div>
             </div>	 
@@ -96,8 +96,8 @@
                     <div class="container"> 
                         <div class="row">
                             <div class="musicheader">
-                                <h4 style = "font-family:Trebuchet MS;">Page List</h4>
-                                <?php if (isset($links)) { ?>
+<!--                                <h4 style = "font-family:Trebuchet MS;">Page List</h4>-->
+                                <?php if (isset($links)) {  echo '<h4 style = "font-family:Trebuchet MS;">Page List</h4>'; ?>
                                     <?php ?>
                                     <?php
                                     echo'<div class="pagination">';

@@ -3,21 +3,40 @@
 class NazrulSong_M extends CI_Model {
     
     
+    function getCollectedRecording($page_title){
+        $this->db->select('Album01,ID, LiveLink');
+        $this->db->from('ferozatable');
+        $where = "Header='Music' and Category='$page_title' and SubCategory='Collected Recording' and LiveLink !=''";
+        $this->db->where($where);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
+    function get_current_page_records_CollectedRecording($page_title,$limit, $start){
+        $this->db->select('Album01,ID, LiveLink');
+        $this->db->from('ferozatable',$limit,$start);
+        $where = "Header='Music' and Category='$page_title' and SubCategory='Collected Recording' and LiveLink !=''";
+        $this->db->where($where);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
     
     function getNazrulVideo() {
-        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and LiveLink !=''";
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and SubCategory='Full Album' and LiveLink !=''";
         $query =  $this->db->query($sql);
         return $query->result();
     }
     
     function getModernBengaliSong(){
-        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Modern Bengali Song' and LiveLink !=''";
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Modern Bengali Song' and SubCategory='Full Album' and LiveLink !=''";
         $query = $this->db->query($sql);
         return $query->result();
     }
     
     function getRabindraSangeet(){
-        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Rabindra Sangeet' and LiveLink !=''";
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Rabindra Sangeet' and SubCategory='Full Album' and LiveLink !=''";
         $query = $this->db->query($sql);
         return $query->result();
     }
