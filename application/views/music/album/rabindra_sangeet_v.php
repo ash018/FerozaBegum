@@ -18,7 +18,7 @@
 </style>
 <div class="f_top_margin_30"></div>
 <div class="col-md-12 line"></div>
-<div class="container-fluid" style="background-color: #8e8e98">
+<div class="container-fluid" style="background-color: #8e8e99">
 
     <div class="row">
         <div class="col-md-12">
