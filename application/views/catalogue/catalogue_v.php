@@ -49,9 +49,11 @@
                         <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
                             Radio<br>Programme
                         </button>
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            Stage Show
-                        </button>
+                        
+                        <a href="<?php echo base_url('programme'); ?>" >
+                            <button  class="btn catbtn" type="submit" />Stage Show</button>
+                        </a>
+                        
                     </div>
 
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>

@@ -65,7 +65,7 @@
                             </ul>
                         </li>
 
-                        <li><a class="dropdown-item" href="#">Stage Show</a></li>
+                        <li><a class="dropdown-item" href="<?php echo base_url('programme') ?>">Stage Show</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
