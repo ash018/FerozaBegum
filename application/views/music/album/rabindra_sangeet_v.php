@@ -25,7 +25,7 @@
             <div class="container"> 
                 <div class="row">
                     <div class="musicheader">
-                        <h4>Rabindra Sangeet</h4>
+                        <h4><?php echo $page_title;?></h4>
                     </div>
                 </div>
             </div>	 
