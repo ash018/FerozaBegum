@@ -25,7 +25,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-5 col-md-2 f_margin_right_10">
+                <div class="col-5 col-md-1 f_margin_right_10">
                     <div class="dropup" >
                         <button class="btn btn-custom" type="button" id="about-us" data-toggle="dropdown" >
                             SUBSCRIBE
@@ -61,7 +61,7 @@
 									<span aria-hidden="true" style="color: #ccc;">×</span>
 								</button>
 							</div>
-                            <div style="border: 0px solid; width: 260px; margin-top: 50px; margin-bottom: 20px;">
+                            <div style="border: 0px solid; width: 260px; margin-top: 50px; margin-bottom: 20px;" >
                                 <form style="padding: 0 15px;">
                                     <div class="form-group" style="margin-bottom: 0rem;">
                                         <input type="text" name="SubscribeName" id="SubscribeName" class="form-control" placeholder="Your Name (Required)" required="">

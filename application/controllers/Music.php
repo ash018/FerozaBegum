@@ -214,6 +214,150 @@ class Music extends CI_Controller {
         echo $this->load->view('music/Collected/nazrul_sangeet_v',$data, TRUE);
     }
     
+    public function Mixed(){
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $data = array();
+        $data['page'] = 'Nazrul Sangeet | Mixed Album';
+        $data['page_title'] = 'Nazrul Sangeet | Mixed Album';
+        $page_title = 'Nazrul Sangeet';
+        
+        
+        // init params
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['results2'] = $this->NazrulSong_M->getMixedRecording($page_title);
+        $total_records = sizeof($data['results2']);
+        
+        $config['base_url'] = base_url() . 'Music/Mixed/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data['results'] = $this->NazrulSong_M->get_current_page_records_MixedRecording($page_title,$limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+        }
+        
+        $this->pagination->initialize($data);
+        
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Mixed/nazrul_sangeet_c', $data, TRUE);
+        
+        $this->load->view('index', $data);
+    }
+    
+    public function MixedRabindraSangeet(){
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $data = array();
+        $data['page'] = 'Rabindra Sangeet | Mixed Album';
+        $data['page_title'] = 'Rabindra Sangeet | Mixed Album';
+        $page_title = 'Rabindra Sangeet';
+        
+        
+        // init params
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['results2'] = $this->NazrulSong_M->getMixedRecording($page_title);
+        $total_records = sizeof($data['results2']);
+        
+        $config['base_url'] = base_url() . 'Music/Mixed/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data['results'] = $this->NazrulSong_M->get_current_page_records_MixedRecording($page_title,$limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+        }
+        
+        $this->pagination->initialize($data);
+        
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Mixed/nazrul_sangeet_c', $data, TRUE);
+        
+        $this->load->view('index', $data);
+    }
+    
+    public function MixedModernBengaliSong(){
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $data = array();
+        $data['page'] = 'Modern Bengali Song | Mixed Album';
+        $data['page_title'] = 'Modern Bengali Song | Mixed Album';
+        $page_title = 'Modern Bengali Song';
+        
+        
+        // init params
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['results2'] = $this->NazrulSong_M->getMixedRecording($page_title);
+        $total_records = sizeof($data['results2']);
+        
+        $config['base_url'] = base_url() . 'Music/Mixed/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data['results'] = $this->NazrulSong_M->get_current_page_records_MixedRecording($page_title,$limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+        }
+        
+        $this->pagination->initialize($data);
+        
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Mixed/nazrul_sangeet_c', $data, TRUE);
+        
+        $this->load->view('index', $data);
+    }
+    
     public function Collected(){
         
         $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];

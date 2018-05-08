@@ -11,17 +11,19 @@
             <div class="col-md-6">
                 <div class = "height">
                     <div>
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            Albums
-                        </button>
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            Collected<br> Recording
-                        </button>
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            Mixed Album
-                        </button>
+                        <a href="<?php echo base_url('catalogue/FullAlbum'); ?>">     
+                            <button  class="btn catbtn" type="submit" />Full Album</button>
+                        </a>
+                        <a href="<?php echo base_url('catalogue/CollectedRecording'); ?>">  
+                            <button class="btn catbtn" type="submit">
+                                Collected<br> Recording
+                            </button>
+                        </a>
+                        <a href="<?php echo base_url('catalogue/MixedAlbum'); ?>">
+                            <button class="btn catbtn" type="submit">
+                                Mixed Album
+                            </button>
+                        </a>
                     </div>
 
                     <div>

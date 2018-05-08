@@ -44,9 +44,9 @@
                         </li>
 						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Mixed Album</a>
                             <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="<?php echo base_url('music'); ?>">Nazrul Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/RabindraSangeet'); ?>">Rabindra Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/ModernBengaliSong'); ?>">Modern Bengali Song</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/Mixed'); ?>">Nazrul Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/MixedRabindraSangeet'); ?>">Rabindra Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/MixedModernBengaliSong'); ?>">Modern Bengali Song</a>
                             </ul>
                         </li>
                     </ul>
@@ -137,19 +137,11 @@
                     </ul>
                 </li>
                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<?php echo base_url('catalogue') ?>" id="navbarDropdownMenuLink"  aria-expanded="false">
+                <li class="nav-item ">
+                    <a class="nav-link " href="<?php echo base_url('catalogue') ?>" id="navbarDropdownMenuLink"  aria-expanded="false">
                         CATALOGUE
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="<?php echo base_url('catalogue') ?>">1940-1950</a></li>
-                        <li><a class="dropdown-item" href="<?php echo base_url('catalogue') ?>">1951-1960</a></li>
-                        <li><a class="dropdown-item" href="<?php echo base_url('catalogue') ?>">1961-1970</a></li>
-                        <li><a class="dropdown-item" href="<?php echo base_url('catalogue') ?>">1971-1980</a></li>    
-                        <li><a class="dropdown-item" href="<?php echo base_url('catalogue') ?>">1981-1990</a></li>
-                        <li><a class="dropdown-item" href="<?php echo base_url('catalogue') ?>">1991-2000</a></li>
-                        <li><a class="dropdown-item" href="<?php echo base_url('catalogue') ?>">2001-2014</a></li>  
-                    </ul>
+                    
                 </li>
             </ul>
             <form class="navbar-form" role="search">

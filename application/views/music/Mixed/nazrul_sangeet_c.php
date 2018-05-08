@@ -25,7 +25,7 @@
             <div class="container"> 
                 <div class="row">
                     <div class="musicheader">
-                        <h4>Nazrul Sangeet</h4>
+                        <h4><?php echo $page_title?></h4>
                     </div>
                 </div>
             </div>	 
@@ -38,8 +38,10 @@
         <div class = "row">
             <?php $i=0; 
             
+            if(!empty($results)){ 
             while($i<sizeof($results)){
-             
+                
+                
                 $id = substr($results[$i]->LiveLink, strrpos($results[$i]->LiveLink, '/') + 1);
                
                 echo '<div class = "col-md-4">' 
@@ -58,11 +60,12 @@
                        .'</div>';
                
                 $i++;
+            }
             ?>
             
             <!--Code Here -->
            
-         <?php }?>
+            <?php }?>
             
             
             <div class="modal fade" id="myModal" role="dialog">
@@ -96,9 +99,9 @@
                     <div class="container"> 
                         <div class="row">
                             <div class="musicheader">
-                                <h4 style = "font-family:Trebuchet MS;">Page List</h4>
-                                <?php if (isset($links)) { ?>
-                                    <?php ?>
+<!--                                <h4 style = "font-family:Trebuchet MS;">Page List</h4>-->
+                                <?php if (isset($links)) {  echo '<h4 style = "font-family:Trebuchet MS;">Page List</h4>'; ?>
+                                    
                                     <?php
                                     echo'<div class="pagination">';
                                     echo $links;
@@ -106,7 +109,7 @@
                                     ?>
                                 <?php } ?>
                                 
-                                <?php                                
+                                <?php
 //                $nRange = ($rangeYear[0]->Diff)/10 + 1;
 //                echo '<div class="row">';
 //                for($i=0;$i<$nRange;$i++){
