@@ -152,6 +152,7 @@
 </div>
 
 <script src="/ferozabegum/asset/js/jquery.min.js"></script>
+<script src="/ferozabegum/asset/js/jquery-3.2.1.min.js"></script>
 <script src="/ferozabegum/asset/js/modulesupportjs/feroza.js"></script>
 <script type="text/javascript">
         $(document).ready(function () {

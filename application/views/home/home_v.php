@@ -1,3 +1,7 @@
+<?php // if (isset($alertCheck)) {
+    //echo $alertCheck;
+//}
+?>
 <div class="f_top_margin_30"></div>
 <div class="col-md-12 line"></div>
 <div class="container-fluid" style="background-color: #8e8e98">

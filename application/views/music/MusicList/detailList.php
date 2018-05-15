@@ -41,43 +41,58 @@
 ?>
 
 <div id="dupSong" >
-    <h7><strong>Song Title: </strong><?php echo $detailsList[0]->SongTitle.' ';?></h7>
-    <br>
-    <h7><strong>Category: </strong><?php echo $detailsList[0]->Category.' ';?></h7>
-    <br>
-    <h7><strong>Release Year(Song): </strong><?php echo $detailsList[0]->ReleaseYearSong;?></h7>
-    <br>
-    <h7><strong>Album Title: </strong><?php echo $detailsList[0]->AlbumTitle;?></h7>
-    <br>
-    <h7><strong>Release Year(Album): </strong><?php echo $detailsList[0]->ReleaseYearAlbum;?></h7>
-    
-    
-    
-    <iframe width="455" height="315" src="https://www.youtube.com/embed/<?php echo $id;?>" frameborder="0" allowfullscreen></iframe>
-    
-    <br>
-    <h7><strong>Vocal Artist: </strong><?php echo $detailsList[0]->VocalArtist;?></h7>
-    <br>
-    <h7><strong>Lyricist: </strong><?php echo $detailsList[0]->Lyricist;?></h7>
-    <br>
-    <h7><strong>Music Composer: </strong><?php echo $detailsList[0]->MusicComposer;?></h7>
-    <br>
-    <h7><strong>Music Director: </strong><?php echo $detailsList[0]->MusicDirector;?></h7>
-    <br>
-    <h7><strong>Music Arranger: </strong><?php echo $detailsList[0]->MusicArranger;?></h7>
-    <br>
-    <h7><strong>Sound Recordist: </strong><?php echo $detailsList[0]->SoundRecordist;?></h7>
-    <br>
-    <h7><strong>Recording Studio: </strong><?php echo $detailsList[0]->RecordingStudio;?></h7>
-    <br>
-    <h7><strong>Producer: </strong><?php echo $detailsList[0]->Producer;?></h7>
-    <br>
-    <h7><strong>Record Label: </strong><?php echo $detailsList[0]->RecordLabel;?></h7>
-    <br>
-    <h7><strong>Remarks: </strong><?php echo $detailsList[0]->Remarks;?></h7>
-    <br>
-    <h7><strong>Album Format: </strong><?php echo $detailsList[0]->AlbumFormat;?></h7>
-    <br>
+    <iframe width="470" height="380" src="https://www.youtube.com/embed/<?php echo $id;?>" frameborder="0" allowfullscreen></iframe>
+    <?php
+    if ($detailsList[0]->SongTitle != '') {
+        echo '<h7><strong>Song Title: </strong>' . $detailsList[0]->SongTitle . '</h7><br>';
+    }
+    if ($detailsList[0]->Category != '') {
+        echo '<h7><strong>Category: </strong>' . $detailsList[0]->Category . '</h7><br>';
+    }
+    if ($detailsList[0]->ReleaseYearSong != '') {
+        echo '<h7><strong>Release Year(Song): </strong>' . $detailsList[0]->ReleaseYearSong . '</h7><br>';
+    }
+    if ($detailsList[0]->AlbumTitle != '') {
+        echo '<h7><strong>Album Title: </strong>' . $detailsList[0]->AlbumTitle . '</h7><br>';
+    }
+    if ($detailsList[0]->ReleaseYearAlbum != '') {
+        echo '<h7><strong>Release Year(Album): </strong>' . $detailsList[0]->ReleaseYearAlbum . '</h7><br>';
+    }
+    if ($detailsList[0]->VocalArtist != '') {
+        echo '<h7><strong>Vocal Artist: </strong>' . $detailsList[0]->VocalArtist . '</h7><br>';
+    }
+    if ($detailsList[0]->Lyricist != '') {
+        echo '<h7><strong>Lyricist: </strong>' . $detailsList[0]->Lyricist . '</h7><br>';
+    }
+    if ($detailsList[0]->MusicComposer != '') {
+        echo '<h7><strong>Music Composer: </strong>' . $detailsList[0]->MusicComposer . '</h7><br>';
+    }
+    if ($detailsList[0]->MusicDirector != '') {
+        echo '<h7><strong>Music Director: </strong>' . $detailsList[0]->MusicDirector . '</h7><br>';
+    }
+    if ($detailsList[0]->MusicArranger != '') {
+        echo '<h7><strong>Music Arranger: </strong>' . $detailsList[0]->MusicArranger . '</h7><br>';
+    }
+    if ($detailsList[0]->SoundRecordist != '') {
+        echo '<h7><strong>Sound Recordist: </strong>' . $detailsList[0]->SoundRecordist . '</h7><br>';
+    }
+    if ($detailsList[0]->RecordingStudio != '') {
+        echo '<h7><strong>Recording Studio: </strong>' . $detailsList[0]->RecordingStudio . '</h7><br>';
+    }
+    if ($detailsList[0]->Producer != '') {
+        echo '<h7><strong>Producer: </strong>' . $detailsList[0]->Producer . '</h7><br>';
+    }
+    if ($detailsList[0]->RecordLabel != '') {
+        echo '<h7><strong>Record Label: </strong>' . $detailsList[0]->RecordLabel . '</h7><br>';
+    }
+    if ($detailsList[0]->Remarks != '') {
+        echo '<h7><strong>Remarks: </strong>' . $detailsList[0]->Remarks . '</h7><br>';
+    }
+    if ($detailsList[0]->AlbumFormat != '') {
+        echo '<h7><strong>Album Format: </strong>' . $detailsList[0]->AlbumFormat . '</h7><br>';
+    }
+    echo '<br>'
+    ?>
 
     
     
@@ -192,8 +207,7 @@
         
     <?php } ?>
  
-    <br>
-    <br>
+   
     <div class="col-md-12 line"></div>
 </div>
 

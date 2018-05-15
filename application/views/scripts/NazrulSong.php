@@ -40,7 +40,9 @@
             
              
             
-             <?php $i=0; 
+            <?php $i=0; 
+             
+             
             
             while($i<sizeof($results)){
              
@@ -61,7 +63,7 @@
                        .$results[$i]->Album01
                        .'.jpg" class = "imageboxX"></a>'
                        .'<button id = "'
-                       .$results[$i]->Album01
+                       .$results[$i]->Album01C
                        .'"'
                        .'class="btn btn-primary detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
                        .$results[$i]->Album01
@@ -93,7 +95,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Feroza Begum</h4>
+                            <h4 class="modal-title">Nazrul Sangeet Song Book</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
@@ -125,7 +127,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title" style="text-align: center">Nazrul Sangit Script</h4>
+                                        <h4 class="modal-title" style="text-align: center">Nazrul Sangeet Song Book</h4>
                                         <h4 id="modalTitleControll" class="modal-title" style="text-align: center"></h4>
                                     </div>
                                     <div id="scriptList" class="modal-body">
@@ -256,11 +258,15 @@
         var baseUrl = "<?php echo base_url(); ?>"; 
         $("#detailsList").empty();
         var detailsID = $(this).attr('data-node');
-        console.log(detailsID);
+        var script_id = $(this).attr('id');
+        var data = { 'detailsID': detailsID , 'script_id': script_id};
+    
+        console.log("Data Node:"+detailsID);
+        console.log("Script ID"+script_id);
         $.ajax({
             url: baseUrl + "Scripts/getScriptDetailsList",
             type: "get",
-            data: "detailsID=" + detailsID,
+            data: data,
             cache: false,
             success: function (data) {
                 console.log(data);
