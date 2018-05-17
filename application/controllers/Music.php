@@ -193,7 +193,15 @@ class Music extends CI_Controller {
         $data['FullSongList'] =$this->NazrulSong_M->getFullSongList($songListID,$songID);
         $data['songListID'] = $songListID;
         
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
+    public function getCollectedSongList(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
         
+        $data['FullSongList'] =$this->NazrulSong_M->getCollectedFullSongList($songListID,$songID);
+        $data['songListID'] = $songListID;
         
         echo $this->load->view('music/MusicList/FullList',$data, TRUE);
     }
@@ -362,37 +370,27 @@ class Music extends CI_Controller {
         
         $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
         $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-        
         $this->load->library('pagination');
-        
         $data = array();
         $data['page'] = 'Nazrul Sangeet | Collected Recording';
         $data['page_title'] = 'Nazrul Sangeet | Collected Recording';
         $page_title = 'Nazrul Sangeet';
-        
-        
         // init params
-        
         $limit_per_page = 10;
         $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
         $data['results2'] = $this->NazrulSong_M->getCollectedRecording($page_title);
         $total_records = sizeof($data['results2']);
-        
         $config['base_url'] = base_url() . 'Music/Collected/index';
         $config['total_rows'] = $total_records;
         $config['per_page'] = $limit_per_page;
         $config["uri_segment"] = 4;
         $config['num_links'] = 15;
         
-        
         if ($total_records > 0) 
         {
             // get current page records
-            
             $data['results'] = $this->NazrulSong_M->get_current_page_records_CollectedRecording($page_title,$limit_per_page, $start_index);
-            
             $this->pagination->initialize($config);
-             
             // build paging links
             $data["links"] = $this->pagination->create_links();
         }

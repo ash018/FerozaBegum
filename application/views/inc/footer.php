@@ -34,10 +34,10 @@
 <!--                <button class="btn btn-custom" type="button" id="about-us" data-toggle="dropdown" >
                     SUBSCRIBE
                 </button>  -->
-                <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="1">
+                <button class="btn btn-custom " type="button" id="about-us" data-target="#myModal2"  data-toggle="modal" data-node="1">
                     SUBSCRIBE
                 </button> 
-                <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal fade" id="myModal2" role="dialog">
                     <div class="modal-dialog">
 
                         <!-- Modal content-->

@@ -214,79 +214,107 @@ class NazrulSong_M extends CI_Model {
         return $query->result();
     }
     
-    function getFullSongList($listID,$songID){
+    function getCollectedFullSongList($listID,$songID){
         if($listID == 1 && $songID == 1){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet' and SubCategory='Collected Recording'";
             $query =  $this->db->query($sql);
         }
         if($listID == 2 && $songID == 1){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1979'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and SubCategory='Collected Recording' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1979'";
             $query =  $this->db->query($sql);
         }
         if($listID == 3 && $songID == 1){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1989' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and SubCategory='Collected Recording' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1989' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 4 && $songID == 1){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and SubCategory='Collected Recording' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 5 && $songID == 1){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and SubCategory='Collected Recording' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 6 && $songID == 1){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum ='Undated' and Category='Nazrul Sangeet'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum ='Undated' and Category='Nazrul Sangeet' and SubCategory='Collected Recording'";
+            $query =  $this->db->query($sql);
+        }
+        return $query->result();
+    }
+    
+    function getFullSongList($listID,$songID){
+        if($listID == 1 && $songID == 1){
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 2 && $songID == 1){
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1979'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 3 && $songID == 1){
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1989' ORDER BY ReleaseYearAlbum";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 4 && $songID == 1){
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 5 && $songID == 1){
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 6 && $songID == 1){
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum ='Undated' and Category='Nazrul Sangeet'";
             $query =  $this->db->query($sql);
         }
         
         if($listID == 1 && $songID == 2){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Rabindra Sangeet'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Rabindra Sangeet'";
             $query =  $this->db->query($sql);
         }
         if($listID == 2 && $songID == 2){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1979'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1979'";
             $query =  $this->db->query($sql);
         }
         if($listID == 3 && $songID == 2){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1989' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1989' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 4 && $songID == 2){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 5 && $songID == 2){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 6 && $songID == 2){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum ='Undated' and Category='Rabindra Sangeet'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum ='Undated' and Category='Rabindra Sangeet'";
             $query =  $this->db->query($sql);
         }
         
         if($listID == 1 && $songID == 3){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Modern Bengali Song'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Modern Bengali Song'";
             $query =  $this->db->query($sql);
         }
         if($listID == 2 && $songID == 3){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1979'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1979'";
             $query =  $this->db->query($sql);
         }
         if($listID == 3 && $songID == 3){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1989' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1989' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 4 && $songID == 3){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 5 && $songID == 3){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
             $query =  $this->db->query($sql);
         }
         if($listID == 6 && $songID == 3){
-            $sql = "SELECT LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum ='Undated' and Category='Modern Bengali Song'";
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum ='Undated' and Category='Modern Bengali Song'";
             $query =  $this->db->query($sql);
         }
         

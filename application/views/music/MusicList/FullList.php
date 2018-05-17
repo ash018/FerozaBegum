@@ -2,14 +2,14 @@
    // print_r($FullSongList);
   // echo'<pre />'; echo ($FullSongList[0]);
     //$AlbumTitle = $FullSongList[0]['AlbumTitle'];
-    //var_dump($FullSongList);
+    //var_dump($FullSongList[0]->SubCategory);
 //    foreach ($FullSongList as $result){
 //        
 //        echo $result->AlbumTitle;
 //        echo $result->SongTitle;
 //
 //    }
-    
+   
     
 ?>
 
@@ -25,17 +25,21 @@
                     <div class="musicheader">
                         <h4><?php
                             if($songListID==1)
-                                echo 'Full List';
+                                echo 'Full List ('.$FullSongList[0]->SubCategory.')';
                             if($songListID==2)
-                                echo'1970-1979';
+                                echo'1970-1979 ('.$FullSongList[0]->SubCategory.')';
                             if($songListID==3)
-                                echo'1980-1989';
+                                echo'1980-1989 ('.$FullSongList[0]->SubCategory.')';
                             if($songListID==4)
                                 echo'1990-1999';
                             if($songListID==5)
                                 echo'2000-2014';
                             if($songListID==6)
                                 echo 'Others'?></h4>
+                        <h4><?php
+//                            if($SubCategory!='')
+//                                echo ' '.$SubCategory;
+                        ?></h4>
                     </div>
                     
                     <table class="table">

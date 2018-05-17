@@ -83,14 +83,7 @@
                     </div>
                 </div>
             </div>
-            
-            
-
-        
-        
-        
-        
-        
+           
         <div class="row">
                 <div class="col-md-12">
                     <div class="container"> 
@@ -128,10 +121,9 @@
                                 
                             </div>
                         </div>
-
+                        
                         <div class="row">
-
-                            <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
+                            <?php if (!empty($results)) echo '<div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
                                 <div class="dropup">
                                     <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="1">
                                         FULL LIST
@@ -158,7 +150,7 @@
 
                                 </div>
                             </div>
-
+                            
                             <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
                                 <div class="dropup">
                                     <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="2">
@@ -177,8 +169,9 @@
                                         </div>	
                                     </div>	
                                 </div>
-                            </div>
-
+                            </div>    
+                            
+                            
                             <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
                                 <div class="dropup">
                                     <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1" data-toggle="modal" data-node="3">
@@ -196,7 +189,7 @@
                                     </div>	
                                 </div>
                             </div>
-
+                            
                             <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
                                 <div class="dropup">
                                     <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1" data-toggle="modal" data-node="4">
@@ -214,6 +207,7 @@
                                     </div>	
                                 </div>
                             </div>
+                            
                             <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
                                 <div class="dropup">
                                     <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1" data-toggle="modal" data-node="5">
@@ -231,7 +225,7 @@
                                     </div>	
                                 </div>
                             </div>
-
+                            
                             <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
                                 <div class="dropup">
                                     <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1" data-toggle="modal" data-node="6">
@@ -248,7 +242,20 @@
                                         </div>	
                                     </div>	
                                 </div>
-                            </div>
+                            </div>    
+
+
+                            '?>
+                            
+
+                            
+
+                            
+
+                            
+                            
+
+                            
 
 
                         </div>
@@ -293,9 +300,9 @@
         var baseUrl = "<?php echo base_url(); ?>"; 
         $("#fullList").empty();
         var songListID = $(this).attr('data-node');
-        console.log(baseUrl);
+        console.log(songListID);
         $.ajax({
-            url: baseUrl + "Music/getSongList",
+            url: baseUrl + "Music/getCollectedSongList",
             type: "get",
             //data: "songListID=" + songListID,
             data: {songListID:songListID, songID:1},
