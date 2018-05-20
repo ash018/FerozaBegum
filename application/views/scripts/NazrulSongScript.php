@@ -25,7 +25,7 @@
     <div class="container"> 
         <div class="row">
             <div class="programmeheader col-md-12">
-                <h4>Feroza Begum Nazrul Sangeet with Stuff Notation</h4>
+                <h4><?php echo $page_title;?></h4>
             </div>
         </div>
     </div>
@@ -55,6 +55,12 @@
                            .'asset/img/NB/'
                            .$results[$i]->Album01
                            .'.jpg" class = "imageboxX"></a>'
+                           .'<button id = "'
+                           .$results[$i]->Album01C
+                           .'"'
+                           .'class="btn btn-primary detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
+                           .$results[$i]->Album01
+                           .'">Details</button><br>&nbsp;'
                            .'</div>';
 
                     $i++;
@@ -78,7 +84,24 @@
             </div>
             
             
-           
+           <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"><?php echo $page_title;?></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div id="detailsList" class="modal-body">
+                            
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <div class="row">
                 <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
@@ -222,7 +245,29 @@
         $(document).ready(function () {
         
        
-
+        $(".detailsButton").click(function(){
+        var baseUrl = "<?php echo base_url(); ?>"; 
+        $("#detailsList").empty();
+        var detailsID = $(this).attr('data-node');
+        var script_id = $(this).attr('id');
+        var data = { 'detailsID': detailsID , 'script_id': script_id};
+    
+        console.log("Data Node:"+detailsID);
+        console.log("Script ID"+script_id);
+        $.ajax({
+            url: baseUrl + "Scripts/getScriptDetailsList",
+            type: "get",
+            data: data,
+            cache: false,
+            success: function (data) {
+                console.log(data);
+                $("#detailsList").append(data);
+                console.log("success");
+                }
+            });
+        });
+        
+        
             
         $(".scriptButton").click(function(){
         var baseUrl = "<?php echo base_url(); ?>"; 

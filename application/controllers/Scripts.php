@@ -121,8 +121,8 @@ class Scripts extends CI_Controller {
     
     public function NazrulSongScript(){
         $data = array();
-        $data['page'] = 'Nazrul Song & Script';
-        $data['page_title'] = 'Nazrul Song & Script';
+        $data['page'] = 'Nazrul Sangeet with Stuff Notation';
+        $data['page_title'] = 'Nazrul Sangeet with Stuff Notation';
         
         $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
         $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);

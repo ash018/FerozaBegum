@@ -181,12 +181,12 @@ class NazrulSong_M extends CI_Model {
     function get_current_script_NazrulSongScript($limit, $start){
         
         if($start!=0){
-            $sql = "SELECT ID,Year,Album01,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
+            $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
                 where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
                 and NazrulSangeetLyricsStuffNotation !='' LIMIT ".$start.','.$limit;
         }
         else{
-            $sql = "SELECT ID,Year,Album01,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
+            $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
                 where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
                 and NazrulSangeetLyricsStuffNotation !='' LIMIT ".$limit;
         }
