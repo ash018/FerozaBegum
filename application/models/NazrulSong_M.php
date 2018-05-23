@@ -350,6 +350,34 @@ class NazrulSong_M extends CI_Model {
         return $query->result();
     }
     
+    function getDetailStuffNotationList($listID){
+        if($listID == 1){
+            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !=''";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 2){
+            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1970' and '1979'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 3){
+            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1980' and '1989' ";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 4){
+            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 5){
+            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
+            $query =  $this->db->query($sql);
+        }
+        if($listID == 6){
+            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year ='Undated'";
+            $query =  $this->db->query($sql);
+        }
+        return $query->result();
+    }
+    
     function getDetailsList($detailsID){
         
         $sql = "SELECT Category,SongTitle,ReleaseYearSong,ReleaseYearAlbum,AlbumTitle,LiveLink,Script01,"

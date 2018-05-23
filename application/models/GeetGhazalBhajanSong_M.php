@@ -5,7 +5,7 @@ class GeetGhazalBhajanSong_M extends CI_Model {
     
     
     function getGeetGhazalBhajanSong() {
-        $sql = "SELECT ID,Year,Album01,GeetGhazalBhajanLyrics FROM `ferozatable`
+        $sql = "SELECT ID,Year,Album01,Album01C,GeetGhazalBhajanLyrics FROM `ferozatable`
                 where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
                 and GeetGhazalBhajanLyrics !=''";
         $query =  $this->db->query($sql);
@@ -15,12 +15,12 @@ class GeetGhazalBhajanSong_M extends CI_Model {
     function get_current_script_GeetGhazalBhajanSong($limit, $start){
         
         if($start!=0){
-            $sql = "SELECT ID,Year,Album01,GeetGhazalBhajanLyrics FROM `ferozatable`
+            $sql = "SELECT ID,Year,Album01,Album01C,GeetGhazalBhajanLyrics FROM `ferozatable`
                 where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
                 and GeetGhazalBhajanLyrics !='' LIMIT ".$start.','.$limit;
         }
         else{
-            $sql = "SELECT ID,Year,Album01,GeetGhazalBhajanLyrics FROM `ferozatable`
+            $sql = "SELECT ID,Year,Album01,Album01C,GeetGhazalBhajanLyrics FROM `ferozatable`
                 where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
                 and GeetGhazalBhajanLyrics !='' LIMIT ".$limit;
         }

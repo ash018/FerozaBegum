@@ -65,6 +65,13 @@ class Scripts extends CI_Controller {
         echo $this->load->view('scripts/detailScriptList',$data, TRUE);
     }
     
+    public function getStuffNotationWithID(){
+        $scriptListID = $this->input->get('scriptListID',TRUE);
+        $data['detailScriptList'] = $this->NazrulSong_M->getDetailStuffNotationList($scriptListID);
+        
+        echo $this->load->view('scripts/detailScriptList',$data, TRUE);
+    }
+    
     public function NazrulSong(){
         $data = array();
         $data['page'] = 'Nazrul Song';

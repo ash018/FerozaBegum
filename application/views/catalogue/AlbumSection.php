@@ -62,7 +62,7 @@
                         
                         else if($page_title=='Mixed Album'){
                             echo '<a href="';
-                            echo base_url('music');
+                            echo base_url('music/mixed');
                             echo '"';
                             echo '<button class="btn catbtn" type="submit" />Nazrul Sangeet</button></a>';
                         }    
@@ -91,7 +91,7 @@
                         
                         else if($page_title=='Mixed Album'){
                             echo '<a href="';
-                            echo base_url('music/RabindraSangeet');
+                            echo base_url('music/MixedRabindraSangeet');
                             echo '"';
                             echo '<button class="btn catbtn" type="submit" />Rabindra Sangeet</button></a>';
                         }
@@ -118,7 +118,7 @@
                         
                         else if($page_title=='Mixed Album'){
                             echo '<a href="';
-                            echo base_url('music');
+                            echo base_url('music/MixedModernBengaliSong');
                             echo '"';
                             echo '<button class="btn catbtn" type="submit" />Modern Bengali'. '<br>'.' Song</button></a>';
                             
