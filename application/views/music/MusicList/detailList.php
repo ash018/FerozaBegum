@@ -2,7 +2,7 @@
    //print_r($detailsList[0]->LiveLink);
    
 
-   
+   $id='';
    if($detailsList[0]->LiveLink!=''){
         $id = substr($detailsList[0]->LiveLink, strrpos($detailsList[0]->LiveLink, '/') + 1);
    }
@@ -41,7 +41,12 @@
 ?>
 
 <div id="dupSong" >
-    <iframe width="470" height="380" src="https://www.youtube.com/embed/<?php echo $id;?>" frameborder="0" allowfullscreen></iframe>
+    <?php if($id!=''){
+        echo '<iframe width="470" height="380" src="https://www.youtube.com/embed/'.$id.'" frameborder="0" allowfullscreen></iframe>';
+    }
+    
+    ?>
+<!--    <iframe width="470" height="380" src="https://www.youtube.com/embed/<?php //echo $id;?>" frameborder="0" allowfullscreen></iframe>-->
     <?php
     if ($detailsList[0]->SongTitle != '') {
         echo '<h7><strong>Song Title: </strong>' . $detailsList[0]->SongTitle . '</h7><br>';
@@ -201,10 +206,10 @@
     <br>
     <br>
     <?php if($detailsList[0]->Script01 !=''){ ?>
-        <a target="_blank" href="<?php echo base_url(); ?>asset/img/NB/<?php echo $detailsList[0]->Script01; ?>.jpg" data-fancybox data-caption="My caption">
+<!--        <a target="_blank" href="<?php //echo base_url(); ?>asset/img/NB/<?php //echo $detailsList[0]->Script01; ?>.jpg" data-fancybox data-caption="My caption">
             <button class="btn btn-warning scriptButton">Song Book</button>
-        </a>
-        
+        </a>-->
+        <button class="btn btn-warning scriptButton" id="<?php echo $detailsList[0]->Script01?>">Song Book</button>
     <?php } ?>
  
    
@@ -249,13 +254,35 @@
             cache: false,
             success: function (data) {
                 console.log(data);
+                $("#dupSong").html('');
                 $("#dupSong").append(data);
                 console.log("success");
                 }
             });
         });
 
-      
+        $(".scriptButton").click(function(){
+        var baseUrl = "<?php echo base_url(); ?>"; 
+        $("#detailsList").empty();
+        var detailsID = $(this).attr('id');
+        var script_id = $(this).attr('id');
+        var data = { 'detailsID': detailsID , 'script_id': script_id};
+    
+        console.log("Data Node:"+detailsID);
+        console.log("Script ID"+script_id);
+        $.ajax({
+            url: baseUrl + "Scripts/getScriptDetailsList",
+            type: "get",
+            data: data,
+            cache: false,
+            success: function (data) {
+                console.log(data);
+                $("#detailsList").html('');
+                $("#detailsList").append(data);
+                console.log("success");
+                }
+            });
+        });
         
     });
 </script>

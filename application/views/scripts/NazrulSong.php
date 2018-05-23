@@ -37,16 +37,9 @@
     <div class = "container">
         <div class = "row">
             
-            
-             
-            
             <?php $i=0; 
              
-             
-            
             while($i<sizeof($results)){
-             
-                
                
                 echo '<div class = "col-md-4">'
                        .'<h6 class="lyricBox">'

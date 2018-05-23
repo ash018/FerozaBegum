@@ -1,38 +1,39 @@
 <?php
 //print_r($detailsList[0]->LiveLink);
-//var_dump($detailsList);
+//var_dump($infoList);
 
 if ($infoList[0]->LiveLink != '') {
     $id = substr($infoList[0]->LiveLink, strrpos($infoList[0]->LiveLink, '/') + 1);
 }
-$detailListSize = 0;
-if ($infoList[0]->Album02 != '') {
+$detailListSize = 1;
+if ($infoList[0]->Album02C != '') {
     $detailListSize++;
 }
-if ($infoList[0]->Album03 != '') {
+if ($infoList[0]->Album03C != '') {
     $detailListSize++;
 }
-if ($infoList[0]->Album04 != '') {
+if ($infoList[0]->Album04C != '') {
     $detailListSize++;
 }
-if ($infoList[0]->Album05 != '') {
+if ($infoList[0]->Album05C != '') {
     $detailListSize++;
 }
-if ($infoList[0]->Album06 != '') {
+if ($infoList[0]->Album06C != '') {
     $detailListSize++;
 }
-if ($infoList[0]->Album07 != '') {
+if ($infoList[0]->Album07C != '') {
     $detailListSize++;
 }
-if ($infoList[0]->Album08 != '') {
+if ($infoList[0]->Album08C != '') {
     $detailListSize++;
 }
-if ($infoList[0]->Album09 != '') {
+if ($infoList[0]->Album09C != '') {
     $detailListSize++;
 }
-if ($infoList[0]->Album10 != '') {
+if ($infoList[0]->Album10C != '') {
     $detailListSize++;
 }
+//echo $detailListSize;
 ?>
 
 <div id="dupSong" >
@@ -105,10 +106,10 @@ echo '<img src="'
     while ($i <= $detailListSize and $chk == 1) {
 
         $chk++;
-
-        if ($infoList[0]->Album02 != '') {
+        
+        if ($infoList[0]->Album01C != '') {
             echo '<button id="'
-            . $infoList[0]->Album02
+            . $infoList[0]->Album01C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -118,9 +119,21 @@ echo '<img src="'
             $i++;
         }
 
-        if ($infoList[0]->Album03 != '') {
+        if ($infoList[0]->Album02C != '') {
             echo '<button id="'
-            . $infoList[0]->Album03
+            . $infoList[0]->Album02C
+            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . $detailsID
+            . '">Album - '
+            . $i
+            . '</button> &nbsp;'
+            . '';
+            $i++;
+        }
+
+        if ($infoList[0]->Album03C != '') {
+            echo '<button id="'
+            . $infoList[0]->Album03C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -130,9 +143,9 @@ echo '<img src="'
             $i++;
         }
 
-        if ($infoList[0]->Album04 != '') {
+        if ($infoList[0]->Album04C != '') {
             echo '<button id="'
-            . $infoList[0]->Album04
+            . $infoList[0]->Album04C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -142,9 +155,9 @@ echo '<img src="'
             $i++;
         }
 
-        if ($infoList[0]->Album05 != '') {
+        if ($infoList[0]->Album05C != '') {
             echo '<button id="'
-            . $infoList[0]->Album05
+            . $infoList[0]->Album05C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -154,9 +167,9 @@ echo '<img src="'
             $i++;
         }
 
-        if ($infoList[0]->Album06 != '') {
+        if ($infoList[0]->Album06C != '') {
             echo '<button id="'
-            . $infoList[0]->Album06
+            . $infoList[0]->Album06C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -166,9 +179,9 @@ echo '<img src="'
             $i++;
         }
 
-        if ($infoList[0]->Album07 != '') {
+        if ($infoList[0]->Album07C != '') {
             echo '<button id="'
-            . $infoList[0]->Album07
+            . $infoList[0]->Album07C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -178,9 +191,9 @@ echo '<img src="'
             $i++;
         }
 
-        if ($infoList[0]->Album08 != '') {
+        if ($infoList[0]->Album08C != '') {
             echo '<button id="'
-            . $infoList[0]->Album08
+            . $infoList[0]->Album08C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -190,9 +203,9 @@ echo '<img src="'
             $i++;
         }
 
-        if ($infoList[0]->Album09 != '') {
+        if ($infoList[0]->Album09C != '') {
             echo '<button id="'
-            . $infoList[0]->Album09
+            . $infoList[0]->Album09C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -202,9 +215,9 @@ echo '<img src="'
             $i++;
         }
 
-        if ($infoList[0]->Album10 != '') {
+        if ($infoList[0]->Album10C != '') {
             echo '<button id="'
-            . $infoList[0]->Album10
+            . $infoList[0]->Album10C
             . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
@@ -218,6 +231,9 @@ echo '<img src="'
 ?>
     <br>
     <br>
+    
+    
+    
     <?php if ($infoList[0]->LiveLink != '') { ?>
         <a target="_blank" href="<?php echo $infoList[0]->LiveLink; ?>" data-fancybox data-caption="My caption">
             <button class="btn btn-warning scriptButton">Video Link</button>
@@ -231,7 +247,7 @@ echo '<img src="'
 
 
 
-<!--<div class="modal fade" id="myModal2" role="dialog">
+<div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -239,7 +255,7 @@ echo '<img src="'
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
-            <div id="dupSong" class="modal-body">
+            <div id="detailsList" class="modal-body">
                 <iframe width="455" height="315" src="https://www.youtube.com/embed/jaav7T_vcTk" frameborder="0" allowfullscreen></iframe>
             </div>
 
@@ -248,7 +264,7 @@ echo '<img src="'
             </div>
         </div>
     </div>
-</div>-->
+</div>
 
 <script src="/ferozabegum/asset/js/jquery.min.js"></script>
 <script src="/ferozabegum/asset/js/modulesupportjs/feroza.js"></script>
@@ -258,19 +274,20 @@ echo '<img src="'
         $(".dupButton").click(function () {
             var baseUrl = "<?php echo base_url(); ?>";
             $("#dupSong").empty();
-            var detailsID = $(this).attr('data-node');
-            var script_id = $(this).attr('id');
+            var detailsID = $(this).attr('id');
+            //var script_id = $(this).attr('id');
             console.log(detailsID);
-            console.log(script_id);
-            var data = {'detailsID': detailsID, 'script_id': script_id};
+            //console.log(script_id);
+            var data = {'detailsID': detailsID};
             $.ajax({
-                url: baseUrl + "Scripts/getScriptDetailsList",
+                url: baseUrl + "Music/getSongDetailsList",
                 type: "get",
                 data: data,
                 cache: false,
                 success: function (data) {
                     console.log(data);
-                    $("#dupSong").append(data);
+                    $("#detailsList").html('');
+                    $("#detailsList").append(data);
                     console.log("success");
                 }
             });
