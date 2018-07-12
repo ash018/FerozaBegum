@@ -50,7 +50,7 @@
                        .'<button id = "'
                        .$results[$i]->Album01
                        .'"'
-                       .'class="btn btn-primary detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
+                       .'class="btn catbtn detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
                        .$results[$i]->Album01
                        .'">Details</button>'
                        .'<br>'
@@ -74,7 +74,7 @@
                         </div>
 
                         <div id="detailsList" class="modal-body">
-                            <iframe width="455" height="315" src="https://www.youtube.com/embed/jaav7T_vcTk" frameborder="0" allowfullscreen></iframe>
+                            
                         </div>
 
                         <div class="modal-footer">

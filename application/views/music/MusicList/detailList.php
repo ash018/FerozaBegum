@@ -90,9 +90,9 @@
     if ($detailsList[0]->RecordLabel != '') {
         echo '<h7><strong>Record Label: </strong>' . $detailsList[0]->RecordLabel . '</h7><br>';
     }
-    if ($detailsList[0]->Remarks != '') {
-        echo '<h7><strong>Remarks: </strong>' . $detailsList[0]->Remarks . '</h7><br>';
-    }
+//    if ($detailsList[0]->Remarks != '') {
+//        echo '<h7><strong>Remarks: </strong>' . $detailsList[0]->Remarks . '</h7><br>';
+//    }
     if ($detailsList[0]->AlbumFormat != '') {
         echo '<h7><strong>Album Format: </strong>' . $detailsList[0]->AlbumFormat . '</h7><br>';
     }
@@ -110,7 +110,7 @@
     $chk++;
     
     if($detailsList[0]->Album02 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album02
         .'">Album - '
         .$i
@@ -120,7 +120,7 @@
     }
     
     if($detailsList[0]->Album03 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album03
         .'">Album - '
         .$i        
@@ -130,7 +130,7 @@
     }
     
     if($detailsList[0]->Album04 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album04
         .'">Album - '
         .$i
@@ -140,7 +140,7 @@
     } 
     
     if($detailsList[0]->Album05 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album05
         .'">Album - '
         .$i
@@ -150,7 +150,7 @@
     }
     
     if($detailsList[0]->Album06 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album06
         .'">Album - '
         .$i
@@ -160,7 +160,7 @@
     }
     
     if($detailsList[0]->Album07 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album07
         .'">Album - '
         .$i        
@@ -170,7 +170,7 @@
     } 
     
     if($detailsList[0]->Album08 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album08
         .'">Album - '
         .$i        
@@ -180,7 +180,7 @@
     } 
     
     if($detailsList[0]->Album09 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album09
         .'">Album -'
         .$i        
@@ -189,7 +189,7 @@
     }
     
     if($detailsList[0]->Album10 != ''){
-        echo '<button class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+        echo '<button class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
         .$detailsList[0]->Album10
         .'">Album -'
         .$i        
@@ -209,7 +209,7 @@
 <!--        <a target="_blank" href="<?php //echo base_url(); ?>asset/img/NB/<?php //echo $detailsList[0]->Script01; ?>.jpg" data-fancybox data-caption="My caption">
             <button class="btn btn-warning scriptButton">Song Book</button>
         </a>-->
-        <button class="btn btn-warning scriptButton" id="<?php echo $detailsList[0]->Script01?>">Song Book</button>
+        <button class="btn catbtn scriptButton" id="<?php echo $detailsList[0]->Script01?>">Song Book</button>
     <?php } ?>
  
    

@@ -201,9 +201,10 @@ img {
 	margin-top: 91px;
 }
 .imagebox{
-	margin-bottom: 60px;
+	
 	cursor: pointer;
-        width: 520px;
+        width: 500px;
+        height: 500px;
 }
 
 .imagebox2{
@@ -335,6 +336,8 @@ td { width: 33%; }
 	margin-top:9px;
 	margin-bottom:9px;
 }
+
+
 
 /* .height{ */
 	/* height:440px; */

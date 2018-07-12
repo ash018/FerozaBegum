@@ -510,5 +510,276 @@ class Music extends CI_Controller {
         $dupID = $this->input->get('dupID',TRUE);
         
     }
-
+    
+    public function year19401950(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song From 1940-1950';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/year19401950', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function year19501960(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song From 1950-1960';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/year19501960', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function year19601970(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song From 1960-1970';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/year19601970', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function year19701980(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song From 1970-1980';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/year19701980', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function year19801990(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song From 1980-1990';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/year19801990', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function year19902000(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song From 1990-2000';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/year19902000', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function year20002010(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song From 2000-2010';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/year20002010', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function year20102015(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song From 2010-2015';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/year20102015', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function yearOthers(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Songs Undated';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/year/yearOthers', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function getSongList19401950(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongList19401950($songListID,$songID);
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
+    public function getSongList19501960(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongList19501960($songListID,$songID);
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    public function getSongList19601970(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongList19601970($songListID,$songID);
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
+    public function getSongList19701980(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongList19701980($songListID,$songID);
+        
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
+    public function getSongList19801990(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongList19801990($songListID,$songID);
+        
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
+    public function getSongList19902000(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongList19902000($songListID,$songID);
+        
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
+    public function getSongList20002010(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongList20002010($songListID,$songID);
+        
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
+    public function getSongList20102015(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongList20102015($songListID,$songID);
+        
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
+    public function getSongListOthers(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getFullSongListOthers($songListID,$songID);
+        
+        $data['songListID'] = 0;
+        if($songListID==1){
+            $data['category'] = "Nazrul Sangeet";
+        }
+        if($songListID==2){
+            $data['category'] = "Rabindra Sangeet";
+        }
+        if($songListID==3){
+            $data['category'] = "Modern Bengali Song";
+        }
+        
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
 }

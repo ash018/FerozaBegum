@@ -242,6 +242,153 @@ class NazrulSong_M extends CI_Model {
         return $query->result();
     }
     
+    function getFullSongList19401950($listID,$songID){
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1940' and '1950'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1940' and '1950'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1940' and '1950'";
+            $query =  $this->db->query($sql);
+        }
+    }
+    
+    function getFullSongList19501960($listID,$songID){
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1950' and '1960'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1950' and '1960'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1950' and '1960'";
+            $query =  $this->db->query($sql);
+        }
+    }
+    
+    function getFullSongList19601970($listID,$songID){
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1960' and '1970'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1960' and '1970'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1960' and '1970'";
+            $query =  $this->db->query($sql);
+        }
+    }
+    
+    function getFullSongList19701980($listID,$songID){
+        
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1980'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1980'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1970' and '1980'";
+            $query =  $this->db->query($sql);
+        }
+        return $query->result();
+    }
+    
+    function getFullSongList19801990($listID,$songID){
+        
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1990'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1990'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1980' and '1990'";
+            $query =  $this->db->query($sql);
+        }
+        return $query->result();
+    }
+    
+    function getFullSongList19902000($listID,$songID){
+        
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '2000'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '2000'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '1990' and '2000'";
+            $query =  $this->db->query($sql);
+        }
+        return $query->result();
+    }
+    
+    function getFullSongList20002010($listID,$songID){
+        
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2010'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2010'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2000' and '2010'";
+            $query =  $this->db->query($sql);
+        }
+        return $query->result();
+    }
+    
+    function getFullSongList20102015($listID,$songID){
+        
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2010' and '2015'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2010' and '2015'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum!='Undated' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '2010' and '2015'";
+            $query =  $this->db->query($sql);
+        }
+        return $query->result();
+    }
+    
+    function getFullSongListOthers($listID,$songID){
+        
+        if($listID==1){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum='Undated' and Category='Nazrul Sangeet'";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==2){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum='Undated' and Category='Rabindra Sangeet' ";
+            $query =  $this->db->query($sql);
+        }
+        if($listID==3){
+            $sql="SELECT ID,Category,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and ReleaseYearAlbum='Undated' and Category='Modern Bengali Song'";
+            $query =  $this->db->query($sql);
+        }
+        return $query->result();
+    }
+    
     function getFullSongList($listID,$songID){
         if($listID == 1 && $songID == 1){
             $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet'";

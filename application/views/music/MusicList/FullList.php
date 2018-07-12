@@ -9,7 +9,7 @@
 //        echo $result->SongTitle;
 //
 //    }
-   
+   //var_dump($FullSongList);
     
 ?>
 
@@ -24,18 +24,22 @@
                 <div class="row">
                     <div class="musicheader">
                         <h4><?php
-                            if($songListID==1)
+                            if($songListID==1 && $FullSongList!=NULL)
                                 echo 'Full List ('.$FullSongList[0]->SubCategory.')';
-                            if($songListID==2)
+                            if($songListID==2 && $FullSongList!=NULL)
                                 echo'1970-1979 ('.$FullSongList[0]->SubCategory.')';
-                            if($songListID==3)
+                            if($songListID==3 && $FullSongList!=NULL)
                                 echo'1980-1989 ('.$FullSongList[0]->SubCategory.')';
-                            if($songListID==4)
+                            if($songListID==4 && $FullSongList!=NULL)
                                 echo'1990-1999';
-                            if($songListID==5)
+                            if($songListID==5 && $FullSongList!=NULL)
                                 echo'2000-2014';
-                            if($songListID==6)
-                                echo 'Others'?></h4>
+                            if($songListID==6 && $FullSongList!=NULL)
+                                echo 'Others';
+                            if($songListID==0 && $FullSongList!=NULL)
+                                echo $category;
+                            if($FullSongList == NULL)
+                                echo 'No '.$category.' Found For This Year Range';?></h4>
                         <h4><?php
 //                            if($SubCategory!='')
 //                                echo ' '.$SubCategory;
@@ -65,7 +69,7 @@
                     
                     
                     
-                    
+                    if($FullSongList != NULL){
                     foreach ($FullSongList as $result){
 
                          
@@ -103,7 +107,7 @@
 
                                 </tbody>
                             </table>
-                    <?php  }?>
+                    <?php }}?>
                     
                 </div>
             </div>	 

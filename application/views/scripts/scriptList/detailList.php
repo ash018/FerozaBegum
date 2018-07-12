@@ -39,65 +39,23 @@ if ($infoList[0]->Album10C != '') {
 <div id="dupSong" >
 
 <?php
-echo '<img src="'
+echo '<a target="_blank" href="'
+ .base_url()
+ . 'asset/img/NB/'
+ . $detailsID
+ .'.jpg" data-fancybox data-caption="My caption">'
+ . '<img src="'
  . base_url()
  . 'asset/img/NB/'
  . $detailsID
- . '.jpg" class = "imageboxX">';
+ . '.jpg" class = "imageboxX"></a>';
+
+    echo '<br>'
 ?>
 
-    <?php
-    if ($infoList[0]->SongTitle != '') {
-        echo '<h7><strong>Song Title: </strong>' . $infoList[0]->SongTitle . '</h7><br>';
-    }
-    if ($infoList[0]->Category != '') {
-        echo '<h7><strong>Category: </strong>' . $infoList[0]->Category . '</h7><br>';
-    }
-    if ($infoList[0]->ReleaseYearSong != '') {
-        echo '<h7><strong>Release Year(Song): </strong>' . $infoList[0]->ReleaseYearSong . '</h7><br>';
-    }
-    if ($infoList[0]->AlbumTitle != '') {
-        echo '<h7><strong>Album Title: </strong>' . $infoList[0]->AlbumTitle . '</h7><br>';
-    }
-    if ($infoList[0]->ReleaseYearAlbum != '') {
-        echo '<h7><strong>Release Year(Album): </strong>' . $infoList[0]->ReleaseYearAlbum . '</h7><br>';
-    }
-    if ($infoList[0]->VocalArtist != '') {
-        echo '<h7><strong>Vocal Artist: </strong>' . $infoList[0]->VocalArtist . '</h7><br>';
-    }
-    if ($infoList[0]->Lyricist != '') {
-        echo '<h7><strong>Lyricist: </strong>' . $infoList[0]->Lyricist . '</h7><br>';
-    }
-    if ($infoList[0]->MusicComposer != '') {
-        echo '<h7><strong>Music Composer: </strong>' . $infoList[0]->MusicComposer . '</h7><br>';
-    }
-    if ($infoList[0]->MusicDirector != '') {
-        echo '<h7><strong>Music Director: </strong>' . $infoList[0]->MusicDirector . '</h7><br>';
-    }
-    if ($infoList[0]->MusicArranger != '') {
-        echo '<h7><strong>Music Arranger: </strong>' . $infoList[0]->MusicArranger . '</h7><br>';
-    }
-    if ($infoList[0]->SoundRecordist != '') {
-        echo '<h7><strong>Sound Recordist: </strong>' . $infoList[0]->SoundRecordist . '</h7><br>';
-    }
-    if ($infoList[0]->RecordingStudio != '') {
-        echo '<h7><strong>Recording Studio: </strong>' . $infoList[0]->RecordingStudio . '</h7><br>';
-    }
-    if ($infoList[0]->Producer != '') {
-        echo '<h7><strong>Producer: </strong>' . $infoList[0]->Producer . '</h7><br>';
-    }
-    if ($infoList[0]->RecordLabel != '') {
-        echo '<h7><strong>Record Label: </strong>' . $infoList[0]->RecordLabel . '</h7><br>';
-    }
-    if ($infoList[0]->Remarks != '') {
-        echo '<h7><strong>Remarks: </strong>' . $infoList[0]->Remarks . '</h7><br>';
-    }
-    if ($infoList[0]->AlbumFormat != '') {
-        echo '<h7><strong>Album Format: </strong>' . $infoList[0]->AlbumFormat . '</h7><br>';
-    }
-    echo '<br>'
-    ?>
-
+    
+    
+    
 
 <?php
     $i = 1;
@@ -110,7 +68,7 @@ echo '<img src="'
         if ($infoList[0]->Album01C != '') {
             echo '<button id="'
             . $infoList[0]->Album01C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -122,7 +80,7 @@ echo '<img src="'
         if ($infoList[0]->Album02C != '') {
             echo '<button id="'
             . $infoList[0]->Album02C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -134,7 +92,7 @@ echo '<img src="'
         if ($infoList[0]->Album03C != '') {
             echo '<button id="'
             . $infoList[0]->Album03C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -146,7 +104,7 @@ echo '<img src="'
         if ($infoList[0]->Album04C != '') {
             echo '<button id="'
             . $infoList[0]->Album04C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -158,7 +116,7 @@ echo '<img src="'
         if ($infoList[0]->Album05C != '') {
             echo '<button id="'
             . $infoList[0]->Album05C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -170,7 +128,7 @@ echo '<img src="'
         if ($infoList[0]->Album06C != '') {
             echo '<button id="'
             . $infoList[0]->Album06C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -182,7 +140,7 @@ echo '<img src="'
         if ($infoList[0]->Album07C != '') {
             echo '<button id="'
             . $infoList[0]->Album07C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -194,7 +152,7 @@ echo '<img src="'
         if ($infoList[0]->Album08C != '') {
             echo '<button id="'
             . $infoList[0]->Album08C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -206,7 +164,7 @@ echo '<img src="'
         if ($infoList[0]->Album09C != '') {
             echo '<button id="'
             . $infoList[0]->Album09C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i
@@ -218,7 +176,7 @@ echo '<img src="'
         if ($infoList[0]->Album10C != '') {
             echo '<button id="'
             . $infoList[0]->Album10C
-            . '" class="btn btn-success dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
+            . '" class="btn catbtn dupButton" data-toggle="modal" data-target="#myModal2" data-node="'
             . $detailsID
             . '">Album - '
             . $i

@@ -33,12 +33,12 @@
                         <a href="<?php echo base_url('music/ModernBengaliSong'); ?>" >
                             <button  class="btn catbtn" type="submit" />Modern<br>Bengali Song</button>
                         </a>
-                        
+
                         <a href="<?php echo base_url('music/RabindraSangeet'); ?>" >
                             <button  class="btn catbtn" type="submit" />Rabindra Sangeet</button>
                         </a>
 
-                        
+
                     </div>
 
                     <div>
@@ -46,16 +46,16 @@
                         <a href="<?php echo base_url('programme/tvProgram'); ?>" >
                             <button  class="btn catbtn" type="submit" />TV Programme</button>
                         </a>
-                        
+
 
                         <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
                             Radio<br>Programme
                         </button>
-                        
+
                         <a href="<?php echo base_url('programme'); ?>" >
                             <button  class="btn catbtn" type="submit" />Stage Show</button>
                         </a>
-                        
+
                     </div>
 
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
@@ -83,7 +83,7 @@
                     <!--                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>-->
 
                     <div> 
-                        <div class="col-md-8 text-center">
+                        <div>
 
 
 
@@ -98,54 +98,63 @@
                     <div>
 
 
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            1940-1950
-                        </button>
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            1950-1960
-                        </button>
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            1960-1970
-                        </button>
-
-                    </div>
-
-                    <div>
-
-
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            1970-1980
-                        </button>
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            1980-1990
-                        </button>
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            1990-2000
-                        </button>
+                        <a href="<?php echo base_url('music/year19401950'); ?>" >
+                            <button class="btn catbtn" type="submit" >
+                                1940-1950
+                            </button>
+                        </a>
+                        <a href="<?php echo base_url('music/year19501960'); ?>" >    
+                            <button class="btn catbtn" type="submit" >
+                                1950-1960
+                            </button>
+                        </a>
+                        <a href="<?php echo base_url('music/year19601970'); ?>" >
+                            <button class="btn catbtn" type="submit">
+                                1960-1970
+                            </button>
+                        </a>
 
                     </div>
 
                     <div>
 
 
+                        <a href="<?php echo base_url('music/year19701980'); ?>" >
+                            <button class="btn catbtn" type="submit" >
+                                1970-1980
+                            </button>
+                        </a>
+                        <a href="<?php echo base_url('music/year19801990'); ?>" >
+                            <button class="btn catbtn" type="submit">
+                                1980-1990
+                            </button>
+                        </a>
+                        <a href="<?php echo base_url('music/year19902000'); ?>" >
+                            <button class="btn catbtn" type="submit">
+                                1990-2000
+                            </button>
+                        </a>
 
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            2000-2010
-                        </button>
+                    </div>
 
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            2010-2015
-                        </button>
+                    <div>
 
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            Others
-                        </button>
+
+                        <a href="<?php echo base_url('music/year20002010'); ?>" >
+                            <button class="btn catbtn" type="submit">
+                                2000-2010
+                            </button>
+                        </a>
+                        <a href="<?php echo base_url('music/year20102015'); ?>" >
+                            <button class="btn catbtn" type="submit">
+                                2010-2015
+                            </button>
+                        </a>
+                        <a href="<?php echo base_url('music/yearOthers'); ?>" >
+                            <button class="btn catbtn" type="submit">
+                                Others
+                            </button>
+                        </a>
 
                     </div>
 

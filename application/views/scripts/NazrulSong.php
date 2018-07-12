@@ -58,7 +58,7 @@
                        .'<button id = "'
                        .$results[$i]->Album01C
                        .'"'
-                       .'class="btn btn-primary detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
+                       .'class="btn catbtn detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
                        .$results[$i]->Album01
                        .'">Details</button><br>&nbsp;'
                        .'</div>';

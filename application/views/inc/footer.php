@@ -67,38 +67,47 @@
         <!--<div class="col-1 col-md-1">&nbsp;</div>-->
         <div class="col-5 col-md-2">  
             <div class="dropup">
-                <button class="btn btn-custom2" type="button" id="about-us" data-toggle="dropdown" >
+<!--                <button class="btn btn-custom2" type="button" id="about-us" data-toggle="dropdown" >
                     SUBMISSION
-                </button>  
-                <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;">
-                    <div class="card-header" style="text-align: center; background-color: #2eb7c9; color: #fff;">
-                        Content Submission								
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                            <span aria-hidden="true" style="color: #ccc;">×</span>
-                        </button>
+                </button>-->
+                <a href="<?php echo base_url('upload'); ?>">
+                    <button class="btn btn-custom2" type="submit"  >
+                        SUBMISSION
+                    </button>
+                </a>
+                
+                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;">
+                        <div class="card-header" style="text-align: center; background-color: #2eb7c9; color: #fff;">
+                            Content Submission								
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
+                                <span aria-hidden="true" style="color: #ccc;">×</span>
+                            </button>
+                        </div>
+                        <div style="border: 0px solid; width: 260px; margin-top: 50px; margin-bottom: 20px;" >
+                            
+                                <div class="form-group" style="margin-bottom: 0rem;">
+                                    <input type="text" name="SubscribeName" id="SubscribeName" class="form-control" placeholder="Your Name (Required)" required="">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0rem;">
+                                    <input type="email" name="SubscribeEmail" id="SubscribeEmail" class="form-control" placeholder="Email (Required)" required="">
+                                </div>
+                                <div class="form-group" style="margin-bottom: 0rem;">
+                                    <input type="text" name="SubscribePhone" id="SubscribeName" class="form-control" placeholder="Your Phone (Optional)">
+                                </div>
+                                <div class="form-group">
+                                    <!--<input type="file" name="SubscribeAttach" id="SubscribeEmail" class="form-control-file" placeholder="Attachment">-->
+                                    
+                                    <label class="custom-file">
+                                            
+                                        <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp" name="userfile" size="20" />
+                                        <span  accesskey=""class="custom-file-control form-control-file "></span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-custom form-control">SUBSCRIBE</button>
+                        
+                        </div>
                     </div>
-                    <div style="border: 0px solid; width: 260px; margin-top: 50px; margin-bottom: 20px;" >
-                        <form style="padding: 0 15px;">
-                            <div class="form-group" style="margin-bottom: 0rem;">
-                                <input type="text" name="SubscribeName" id="SubscribeName" class="form-control" placeholder="Your Name (Required)" required="">
-                            </div>
-                            <div class="form-group" style="margin-bottom: 0rem;">
-                                <input type="email" name="SubscribeEmail" id="SubscribeEmail" class="form-control" placeholder="Email (Required)" required="">
-                            </div>
-                            <div class="form-group" style="margin-bottom: 0rem;">
-                                <input type="text" name="SubscribePhone" id="SubscribeName" class="form-control" placeholder="Your Phone (Optional)">
-                            </div>
-                            <div class="form-group">
-                                <!--<input type="file" name="SubscribeAttach" id="SubscribeEmail" class="form-control-file" placeholder="Attachment">-->
-                                <label class="custom-file">
-                                    <input type="file" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
-                                    <span    accesskey=""class="custom-file-control form-control-file "></span>
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-custom form-control">SUBSCRIBE</button>
-                        </form>
-                    </div>
-                </div>        
+               
             </div>
         </div>
     </div>   
