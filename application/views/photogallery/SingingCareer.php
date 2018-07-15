@@ -14,7 +14,7 @@
     
     <div class ="container">
         <div class = "row">
-            <?php $i=0; 
+            <?php $i=0; //15_7_2018
             
             while($i<sizeof($singlePhoto)){
              
