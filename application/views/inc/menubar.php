@@ -33,6 +33,7 @@
                                 <a class="dropdown-item" href="<?php echo base_url('music'); ?>">Nazrul Sangeet</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/RabindraSangeet'); ?>">Rabindra Sangeet</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/ModernBengaliSong'); ?>">Modern Bengali Song</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/KabboGeetiSong'); ?>">Kabbo Geeti</a>
                             </ul>
                         </li>
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Collected Recording</a>

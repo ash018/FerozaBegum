@@ -54,7 +54,7 @@
                                         <th>Release Year</th>
                                         <th>Record Label</th>
                                         <th>Song Title</th>
-                                        <th>Link</th>
+                                        <th>Video</th>
                                     </tr>
                                 </thead>
                    

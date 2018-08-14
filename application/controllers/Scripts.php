@@ -420,5 +420,17 @@ class Scripts extends CI_Controller {
         $data['main_content'] = $this->load->view('scripts/FullVolume', $data, TRUE);
         $this->load->view('index', $data);
     }
+    
+    public function getSongbook(){
+        $SongbookID = $this->input->get('SongbookID',TRUE);
+        $bookID = $this->input->get('bookID',TRUE);
+        
+        
+        $data['FullSongBookList'] =$this->NazrulSong_M->getFullSongBookList($SongbookID,$bookID);
+        
+       // $data['songListID'] = $songListID;
+        
+        echo $this->load->view('scripts/scriptList/FullList',$data, TRUE);
+    }
 
 }

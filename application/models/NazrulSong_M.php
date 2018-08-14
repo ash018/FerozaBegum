@@ -21,6 +21,29 @@ class NazrulSong_M extends CI_Model {
             
     }
     
+    function get_current_page_records_Kabbo_Geeti_Song($limit, $start){
+        
+        if($start!=0){
+            $sql = "SELECT Album01,ID,LiveLink FROM ferozatable where Header='Music' and Category='Kabbo Geeti Song' and LiveLink !='' LIMIT ".$start.','.$limit;
+        }
+        else{
+            $sql = "SELECT Album01,ID,LiveLink FROM ferozatable where Header='Music' and Category='Kabbo Geeti Song' and LiveLink !='' LIMIT ".$limit;
+        }
+        $query = $this->db->query($sql);
+        
+        if ($query->num_rows() > 0) 
+        {
+            foreach ($query->result() as $row) 
+            {
+                $data[] = $row;
+            }
+             
+            return $data;
+        }
+ 
+        return false;
+    }
+    
     function getCollectedRecording($page_title){
         $this->db->select('Album01,ID, LiveLink');
         $this->db->from('ferozatable');
@@ -55,6 +78,12 @@ class NazrulSong_M extends CI_Model {
     
     function getRabindraSangeet(){
         $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Rabindra Sangeet' and SubCategory='Full Album' and LiveLink !=''";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+    
+    function getKabboGeetiSong(){
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Kabbo Geeti Song' and SubCategory='Full Album' and LiveLink !=''";
         $query = $this->db->query($sql);
         return $query->result();
     }
@@ -211,6 +240,17 @@ class NazrulSong_M extends CI_Model {
                 . " FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='".$page_title."'"
                 . " and ReleaseYearAlbum !='Undated' and ReleaseYearAlbum !=''";
         $query =  $this->db->query($sql);
+        return $query->result();
+    }
+    
+    function getFullSongBookList($SongbookID,$bookID){
+        if($SongbookID==1 && $bookID==1){
+            $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
+                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                and NazrulSangeetLyrics !='' and Album01C !=''
+               ";
+            $query =  $this->db->query($sql);
+        }
         return $query->result();
     }
     

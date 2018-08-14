@@ -103,13 +103,51 @@
                 </div>
             </div>
             
+            <div class="modal fade" id="myModalSongBook" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nazrul Sangeet Song Book (Full List)</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div id="fullList" class="modal-body">
+                            
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal fade" id="myModalSongBook7079" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Nazrul Sangeet Song Book (1970-1979)</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div id="fullList" class="modal-body">
+                            
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             
            
             
             <div class="row">
                 <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
                     <div class="dropup">
-                        <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalS"  data-toggle="modal" data-node="1">
+                        <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook"  data-toggle="modal" data-node="1">
                             FULL LIST
                         </button>  
 
@@ -138,7 +176,7 @@
 
             <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
                 <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalS"  data-toggle="modal" data-node="2">
+                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook7079"  data-toggle="modal" data-node="2">
                         1970-1979
                     </button>  
                     <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
@@ -270,15 +308,35 @@
         });
 
             
-        $(".ferozaButton").click(function(){
+//        $(".ferozaButton").click(function(){
+//        var baseUrl = "<?php //echo base_url(); ?>"; 
+//        $("#fullList").empty();
+//        var songListID = $(this).attr('data-node');
+//        console.log(baseUrl);
+//        console.log(songListID);
+//        $.ajax({
+//            url: baseUrl + "Music/getSongList",
+//            type: "get",
+//            data: "songListID=" + songListID,
+//            cache: false,
+//            success: function (data) {
+//                console.log(data);
+//                $("#fullList").append(data);
+//                console.log("success");
+//            }
+//        });
+//    });
+        
+        $(".scriptButton").click(function(){
         var baseUrl = "<?php echo base_url(); ?>"; 
         $("#fullList").empty();
-        var songListID = $(this).attr('data-node');
+        var SongbookID = $(this).attr('data-node');
         console.log(baseUrl);
+        console.log(SongbookID);
         $.ajax({
-            url: baseUrl + "Music/getSongList",
+            url: baseUrl + "Scripts/getSongbook",
             type: "get",
-            data: "songListID=" + songListID,
+            data: {SongbookID:SongbookID, bookID:1},
             cache: false,
             success: function (data) {
                 console.log(data);

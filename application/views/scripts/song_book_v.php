@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <?php ?>
+    <?php //var_dump($results);?>
     
     <div class = "container">
         <div class = "row">

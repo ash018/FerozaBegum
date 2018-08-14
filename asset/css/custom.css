@@ -302,11 +302,11 @@ td { width: 33%; }
 
 .catbtn{
 	color: #fff;
-    background-color: #2fb7c8;
-    border-color: #2fb7c8;
-    border-radius: 0rem;
-    padding: 8px 10px;
-    line-height: 1.40;
+        background-color: #2fb7c8;
+        border-color: #2fb7c8;
+        border-radius: 0rem;
+        padding: 8px 10px;
+        line-height: 1.40;
 	margin-top:8px;
 	margin-bottom:4px;
 	font-family:Myriad Pro;
@@ -336,6 +336,7 @@ td { width: 33%; }
 	margin-top:9px;
 	margin-bottom:9px;
 }
+
 
 
 

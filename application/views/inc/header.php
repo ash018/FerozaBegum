@@ -19,6 +19,7 @@
         <link href="<?php echo base_url();?>asset/css/navbar_1.css" rel="stylesheet">
         <link href="<?php echo base_url();?>asset/css/custom.css" rel="stylesheet">
         <link href="<?php echo base_url();?>asset/css/media.css" rel="stylesheet">
+        <link href="<?php echo base_url();?>asset/css/w3.css" rel="stylesheet">
 <!--        <script src="<?php //echo base_url();?>asset/js/jquery-3.2.1.min.js"></script>
         <script src="<?php //echo base_url();?>asset/js/tether.min.js"></script>
         <script src="<?php //echo base_url();?>asset/js/bootstrap.min.js"></script>-->

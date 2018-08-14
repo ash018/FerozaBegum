@@ -35,12 +35,12 @@
                        .$singlePhoto[$i]->NewsCode
                        .'.jpg" class= "img-responsive imagebox">'
                        . '</a>'
-                       .'<button id = "'
-                       .$singlePhoto[$i]->ID
-                       .'"'
-                       .'class="btn catbtn detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
-                       .$singlePhoto[$i]->NewsCode
-                       .'">Details</button>'
+//                       .'<button id = "'
+//                       .$singlePhoto[$i]->ID
+//                       .'"'
+//                       .'class="btn catbtn detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
+//                       .$singlePhoto[$i]->NewsCode
+//                       .'">Details</button>'
                        .'<br>'
                        .'&nbsp;'
                        .'</div>';
