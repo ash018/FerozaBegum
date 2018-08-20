@@ -65,19 +65,20 @@ class NazrulSong_M extends CI_Model {
     }
     
     function getNazrulVideo() {
-        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and SubCategory='Full Album' and LiveLink !=''";
+        //$sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and SubCategory='Full Album' and LiveLink !=''";
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and LiveLink !=''";
         $query =  $this->db->query($sql);
         return $query->result();
     }
     
     function getModernBengaliSong(){
-        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Modern Bengali Song' and SubCategory='Full Album' and LiveLink !=''";
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Modern Bengali Song' and LiveLink !=''";
         $query = $this->db->query($sql);
         return $query->result();
     }
     
     function getRabindraSangeet(){
-        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Rabindra Sangeet' and SubCategory='Full Album' and LiveLink !=''";
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Rabindra Sangeet' and LiveLink !=''";
         $query = $this->db->query($sql);
         return $query->result();
     }
@@ -160,10 +161,10 @@ class NazrulSong_M extends CI_Model {
     function get_current_script_records($limit, $start){
         
         if($start!=0){
-            $sql = "SELECT Album01,ID FROM ferozatable where Header='Songbook' and SubCategory = 'Single Pages' LIMIT ".$start.','.$limit;
+            $sql = "SELECT Album01,ID FROM ferozatable where NazrulSangeetLyrics !='' and Album01C !='' and Category='Feroza Begum' LIMIT ".$start.','.$limit;
         }
         else{
-            $sql = "SELECT Album01,ID FROM ferozatable where Header='Songbook' and SubCategory = 'Single Pages' LIMIT ".$limit;
+            $sql = "SELECT Album01,ID FROM ferozatable where NazrulSangeetLyrics !='' and Album01C !='' and Category='Feroza Begum' LIMIT ".$limit;
         }
         $query = $this->db->query($sql);
         
@@ -184,12 +185,12 @@ class NazrulSong_M extends CI_Model {
         
         if($start!=0){
             $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum' 
                 and NazrulSangeetLyrics !='' and Album01C!='' LIMIT ".$start.','.$limit;
         }
         else{
             $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum'
                 and NazrulSangeetLyrics !='' and Album01C!='' LIMIT ".$limit;
         }
         $query = $this->db->query($sql);
@@ -211,12 +212,12 @@ class NazrulSong_M extends CI_Model {
         
         if($start!=0){
             $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum' 
                 and NazrulSangeetLyricsStuffNotation !='' LIMIT ".$start.','.$limit;
         }
         else{
             $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum' 
                 and NazrulSangeetLyricsStuffNotation !='' LIMIT ".$limit;
         }
         $query = $this->db->query($sql);
@@ -246,7 +247,7 @@ class NazrulSong_M extends CI_Model {
     function getFullSongBookList($SongbookID,$bookID){
         if($SongbookID==1 && $bookID==1){
             $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum' 
                 and NazrulSangeetLyrics !='' and Album01C !=''
                ";
             $query =  $this->db->query($sql);
@@ -567,7 +568,11 @@ class NazrulSong_M extends CI_Model {
     
     function getDetailsList($detailsID){
         
-        $sql = "SELECT Category,SongTitle,ReleaseYearSong,ReleaseYearAlbum,AlbumTitle,LiveLink,Script01,"
+//        $sql = "SELECT Category,SongTitle,ReleaseYearSong,ReleaseYearAlbum,AlbumTitle,LiveLink,Script01,"
+//                . "`Album01`,`Album02`, `Album03`,`Album04`,`Album05`,`Album06`,`Album07`,`Album08`,`Album09`,`Album10`"
+//                .",Remarks,AlbumFormat,VocalArtist,Lyricist,MusicComposer,MusicDirector,MusicArranger,SoundRecordist,RecordingStudio,Producer,RecordLabel"
+//                . " from `ferozatable` where Album01 = '" . $detailsID."'";
+        $sql = "SELECT Category,SongTitle,ReleaseYearSong,ReleaseYearAlbum,AlbumTitle,LiveLink,Notebook01,"
                 . "`Album01`,`Album02`, `Album03`,`Album04`,`Album05`,`Album06`,`Album07`,`Album08`,`Album09`,`Album10`"
                 .",Remarks,AlbumFormat,VocalArtist,Lyricist,MusicComposer,MusicDirector,MusicArranger,SoundRecordist,RecordingStudio,Producer,RecordLabel"
                 . " from `ferozatable` where Album01 = '" . $detailsID."'";
@@ -593,16 +598,15 @@ class NazrulSong_M extends CI_Model {
     
     
     function getScriptList(){
-        $sql = "SELECT Album01,ID FROM ferozatable where Header='Songbook' and SubCategory = 'Single Pages'";
+        $sql = "SELECT Album01,ID FROM ferozatable WHERE Category='Nazrul Sangeet' and SubCategory = 'Single Song'";
         $query =  $this->db->query($sql);
         return $query->result();
     }
     
     
     function getNazrulSong(){
-        $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
-                and NazrulSangeetLyrics !='' and Album01C !=''
+        $sql = "SELECT Category,SubCategory,ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
+                where NazrulSangeetLyrics !='' and Album01C !='' and Category='Feroza Begum'
                ";
         
         $query =  $this->db->query($sql);
@@ -611,7 +615,7 @@ class NazrulSong_M extends CI_Model {
     
     function getNazrulSongScript(){
         $sql = "SELECT ID,Year,Album01,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum' 
                 and NazrulSangeetLyricsStuffNotation !=''";
         $query = $this->db->query($sql);
         return $query->result();

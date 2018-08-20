@@ -6,7 +6,7 @@ class RabindraSong_M extends CI_Model {
     
     function getRabindraSong() {
         $sql = "SELECT ID,Year,Album01,Album01C,RabindraSangeetLyrics FROM ferozatable
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum' 
                 and RabindraSangeetLyrics !=''";
         $query =  $this->db->query($sql);
         return $query->result();
@@ -16,12 +16,12 @@ class RabindraSong_M extends CI_Model {
         
         if($start!=0){
             $sql = "SELECT ID,Year,Album01,Album01C,RabindraSangeetLyrics FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum' 
                 and RabindraSangeetLyrics !='' LIMIT ".$start.','.$limit;
         }
         else{
             $sql = "SELECT ID,Year,Album01,Album01C,RabindraSangeetLyrics FROM `ferozatable`
-                where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Single Pages'
+                where Header='Songbook' and Category='Feroza Begum' 
                 and RabindraSangeetLyrics !='' LIMIT ".$limit;
         }
         $query = $this->db->query($sql);

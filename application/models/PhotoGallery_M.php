@@ -20,7 +20,7 @@ class PhotoGallery_M extends CI_Model {
     }
     
     public function getSingingCareerPhoto(){
-        $sql = "SELECT ID,PhotoCode,Year,Caption FROM photo WHERE Type='Singing Career';";
+        $sql = "SELECT ID,PhotoCode,Year,Caption FROM photo WHERE Type='Music Career';";
         $query =  $this->db->query($sql);
         return $query->result();
     }

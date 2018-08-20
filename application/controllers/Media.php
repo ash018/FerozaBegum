@@ -46,5 +46,21 @@ class Media extends CI_Controller {
         $data['main_content'] = $this->load->view('Media/PressBengali', $data, TRUE);
         $this->load->view('index', $data);
     }
+    
+    public function getPressNewsList(){
+        $detailsID = $this->input->get('detailsID',TRUE);
+        //echo $detailsID;
+        
+        $data['detailsList'] = $this->Press_M->getPressDetailsList($detailsID);
+        echo $this->load->view('media/mediaList/detailList',$data, TRUE);
+    }
+    
+    public function getPhotoDetailsList(){
+        $detailsID = $this->input->get('detailsID',TRUE);
+        //echo $detailsID;
+        
+        $data['detailsList'] = $this->Press_M->getPhotoDetailsList($detailsID);
+        echo $this->load->view('media/mediaList/photoDetailList',$data, TRUE);
+    }
 
 }

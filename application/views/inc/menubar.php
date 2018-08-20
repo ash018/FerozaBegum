@@ -36,6 +36,13 @@
                                 <a class="dropdown-item" href="<?php echo base_url('music/KabboGeetiSong'); ?>">Kabbo Geeti</a>
                             </ul>
                         </li>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Mixed Album</a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo base_url('music/Mixed'); ?>">Nazrul Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/MixedRabindraSangeet'); ?>">Rabindra Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/MixedModernBengaliSong'); ?>">Modern Bengali Song</a>
+                            </ul>
+                        </li>
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Collected Recording</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('music/Collected'); ?>">Nazrul Sangeet</a>
@@ -43,13 +50,7 @@
                                 <a class="dropdown-item" href="<?php echo base_url('music/CollectedModernBengaliSong'); ?>">Modern Bengali Song</a>
                             </ul>
                         </li>
-						<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Mixed Album</a>
-                            <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="<?php echo base_url('music/Mixed'); ?>">Nazrul Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/MixedRabindraSangeet'); ?>">Rabindra Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/MixedModernBengaliSong'); ?>">Modern Bengali Song</a>
-                            </ul>
-                        </li>
+                        
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -152,12 +153,23 @@
                     
                 </li>
             </ul>
-            <form class="navbar-form" role="search">
-                <input type="text" class="f_search" placeholder="Search Your song">      
+<!--            <div class="input-group">-->
+            <form class="form-inline" action="<?php echo base_url('Search'); ?>" method="post" enctype="multipart/form-data">
+                <input type="text" class="form-control" placeholder="Search Song" name="searchSong" id="searchSong">
+            <!--                <span class="input-group-btn">-->
+                <button class="btn btn-primary" type="submit">Search</button>
             </form>
+<!--                </span>-->
+<!--            </div>-->
+            
+
+    
+
         </div>
     </nav>
 </div>
+
+
 
 <script src="/ferozabegum/asset/js/jquery.min.js"></script>
 <script src="/ferozabegum/asset/js/jquery-3.2.1.min.js"></script>

@@ -205,11 +205,14 @@
     ?>
     <br>
     <br>
-    <?php if($detailsList[0]->Script01 !=''){ ?>
+    <?php //if($detailsList[0]->Script01 !=''){
+        if($detailsList[0]->Notebook01 !=''){
+    ?>
 <!--        <a target="_blank" href="<?php //echo base_url(); ?>asset/img/NB/<?php //echo $detailsList[0]->Script01; ?>.jpg" data-fancybox data-caption="My caption">
             <button class="btn btn-warning scriptButton">Song Book</button>
         </a>-->
-        <button class="btn catbtn scriptButton" id="<?php echo $detailsList[0]->Script01?>">Song Book</button>
+        <button class="btn catbtn scriptButton" id="<?php //echo $detailsList[0]->Script01 
+        echo $detailsList[0]->Notebook01?>">Song Book</button>
     <?php } ?>
  
    

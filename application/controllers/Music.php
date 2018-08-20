@@ -45,6 +45,7 @@ class Music extends CI_Controller {
         $config["uri_segment"] = 3;
         $config['num_links'] = 15;
         
+        
  
         if ($total_records > 0) 
         {
@@ -56,6 +57,8 @@ class Music extends CI_Controller {
              
             // build paging links
             $data["links"] = $this->pagination->create_links();
+            
+            
         }
          
         //$this->load->view('user_listing', $params);
@@ -66,6 +69,7 @@ class Music extends CI_Controller {
         
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('music/album/nazrul_sangeet_v', $data, TRUE);
+        
         
         $this->load->view('index', $data);
     }
