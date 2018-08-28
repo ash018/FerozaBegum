@@ -252,6 +252,22 @@ class NazrulSong_M extends CI_Model {
                ";
             $query =  $this->db->query($sql);
         }
+        if($SongbookID==2 && $bookID==1){
+            $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
+                    where Header='Songbook' and Category='Feroza Begum' 
+                    and NazrulSangeetLyrics !='' and Album01C !=''
+                    and CAST(Year as decimal(10,5)) BETWEEN '1970' and '1979'
+                ";
+            $query =  $this->db->query($sql);
+        }
+        if($SongbookID==2 && $bookID==1){
+            $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
+                    where Header='Songbook' and Category='Feroza Begum' 
+                    and NazrulSangeetLyrics !='' and Album01C !=''
+                    and CAST(Year as decimal(10,5)) BETWEEN '1980' and '1989'
+                ";
+            $query =  $this->db->query($sql);
+        }
         return $query->result();
     }
     

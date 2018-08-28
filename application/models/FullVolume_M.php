@@ -5,21 +5,21 @@ class FullVolume_M extends CI_Model {
     
     
     function getFullVolume() {
-        $sql = "SELECT ID,Year,Album01,FullVolume,Category  FROM `ferozatable` where Header='Songbook' and Category='Feroza Begum' and SubCategory = 'Full Volume'";
+        $sql = "SELECT ID,Year,Album01,Category,SubCategory  FROM `ferozatable` where Header='Songbook' and Category='Feroza Begum' and SubCategory LIKE '%Notebook%'";
         $query =  $this->db->query($sql);
         return $query->result();
     }
     
     function getFullVolumeK() {
-        $sql = "SELECT ID,Year,Album01,FullVolume,Category  FROM `ferozatable`
-                where Header='Songbook' and Category='Kamal Das Gupta' and SubCategory = 'Full Volume'";
+        $sql = "SELECT ID,Year,Album01,SubCategory,Category  FROM `ferozatable`
+                where Header='Songbook' and Category='Kamal Das Gupta'";
         $query =  $this->db->query($sql);
         return $query->result();
     }
     
     function getFullVolumeOthers() {
-        $sql = "SELECT ID,Year,Album01,FullVolume,Category  FROM `ferozatable`
-                where Header='Songbook' and Category='Others' and SubCategory = 'Full Volume'";
+        $sql = "SELECT ID,Year,Album01,Category,SubCategory  FROM `ferozatable`
+                where Header='Songbook' and Category='Others'";
         $query =  $this->db->query($sql);
         return $query->result();
     }

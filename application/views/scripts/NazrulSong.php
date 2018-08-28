@@ -107,7 +107,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Nazrul Sangeet Song Book (Full List)</h4>
+                            <h4 class="modal-title">Nazrul Sangeet Song Book </h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
@@ -176,7 +176,7 @@
 
             <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
                 <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook7079"  data-toggle="modal" data-node="2">
+                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook"  data-toggle="modal" data-node="2">
                         1970-1979
                     </button>  
                     <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
@@ -197,7 +197,7 @@
 
             <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
                 <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalS" data-toggle="modal" data-node="3">
+                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook" data-toggle="modal" data-node="3">
                         1980-1989
                     </button>  
                     <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
@@ -215,7 +215,7 @@
 
             <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
                 <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalS" data-toggle="modal" data-node="4">
+                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook" data-toggle="modal" data-node="4">
                         1990-1999
                     </button>  
                     <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
@@ -233,7 +233,7 @@
 
             <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
                 <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalS" data-toggle="modal" data-node="5">
+                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook" data-toggle="modal" data-node="5">
                         2000-2014
                     </button>  
                     <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
@@ -253,7 +253,7 @@
 
             <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
                 <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalS" data-toggle="modal" data-node="6">
+                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook" data-toggle="modal" data-node="6">
                         Others
                     </button>  
                     <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">

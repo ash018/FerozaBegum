@@ -301,6 +301,48 @@ class Scripts extends CI_Controller {
         $this->load->view('index', $data);
     }
     
+    public function ModernBengaliLyricsStuffNotation(){
+        $data = array();
+        $data['page'] = 'Modern Bengali Song Lyrics Stuff Notation';
+        $data['page_title'] = 'Modern Bengali Song Lyrics Stuff Notation';
+        
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['ModernBengaliSong'] = $this->ModernBengaliSong_M->getModernBengaliLyricsStuffNotation(); 
+        $total_records = sizeof($data['ModernBengaliSong']);
+        
+        $config['base_url'] = base_url() . 'scripts/ModernBengaliLyricsStuffNotation/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data["results"] = $this->ModernBengaliSong_M->get_current_script_ModernBengaliLyricsStuffNotation($limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+           
+        }
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('scripts/ModernBengaliLyricsStuffNotation', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
     public function GeetGhazalBhajanSong(){
         $data = array();
         $data['page'] = 'Geet Ghazal Bhajan Song';
@@ -340,6 +382,48 @@ class Scripts extends CI_Controller {
         
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('scripts/GeetGhazalBhajanSong', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function GeetGhazalBhajanLyricsStuffNotation(){
+        $data = array();
+        $data['page'] = 'Geet Ghazal Bhajan Song Lyrics & Stuff Notation';
+        $data['page_title'] = 'Geet Ghazal Bhajan Lyrics & Stuff Notation';
+        
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['GeetGhazalBhajanSong'] = $this->GeetGhazalBhajanSong_M->getGeetGhazalBhajanLyricsStuffNotation(); 
+        $total_records = sizeof($data['GeetGhazalBhajanSong']);
+        
+        $config['base_url'] = base_url() . 'scripts/GeetGhazalBhajanLyricsStuffNotation/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data["results"] = $this->GeetGhazalBhajanSong_M->get_current_script_GeetGhazalBhajanLyricsStuffNotation($limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+           
+        }
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('scripts/GeetGhazalBhajanLyricsStuffNotation', $data, TRUE);
         $this->load->view('index', $data);
     }
     
@@ -385,6 +469,48 @@ class Scripts extends CI_Controller {
         $this->load->view('index', $data);
     }
     
+    public function OthersSongLyricsStuffNotation(){
+        $data = array();
+        $data['page'] = 'Others Song';
+        $data['page_title'] = 'Others Song';
+        
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['OthersSong'] = $this->OthersSong_M->getOthersSongLyricsStuffNotation(); 
+        $total_records = sizeof($data['OthersSong']);
+        
+        $config['base_url'] = base_url() . 'scripts/OthersSongLyricsStuffNotation/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data["results"] = $this->OthersSong_M->get_current_script_OthersSongLyricsStuffNotation($limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+           
+        }
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('scripts/OthersSongLyricsStuffNotation', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
     public function FullVolume(){
         $data = array();
         $data['page'] = 'Full Volume';
@@ -416,6 +542,8 @@ class Scripts extends CI_Controller {
         
         $data['FullVolume'] = $this->FullVolume_M->getFullVolumeOthers();
         
+        
+        
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('scripts/FullVolume', $data, TRUE);
         $this->load->view('index', $data);
@@ -427,7 +555,15 @@ class Scripts extends CI_Controller {
         
         
         $data['FullSongBookList'] =$this->NazrulSong_M->getFullSongBookList($SongbookID,$bookID);
-        
+        if($SongbookID == 1){
+            $data['title'] = "Full List";
+        }
+        if($SongbookID == 2){
+            $data['title'] = "1970-79";
+        }
+        if($SongbookID == 2){
+            $data['title'] = "1980-89";
+        }
        // $data['songListID'] = $songListID;
         
         echo $this->load->view('scripts/scriptList/FullList',$data, TRUE);

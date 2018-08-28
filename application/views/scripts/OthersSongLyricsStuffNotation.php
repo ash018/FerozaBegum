@@ -25,13 +25,13 @@
     <div class="container"> 
         <div class="row">
             <div class="programmeheader col-md-12">
-                <h4>Feroza Begum Geet Ghazal Bhajan Song</h4>
+                <h4>Feroza Begum Others Song</h4>
             </div>
         </div>
     </div>
 
     <?php 
-       
+        
     ?>
     
     <div class = "container">
@@ -48,7 +48,7 @@
                
                 echo '<div class = "col-md-4">'
                        .'<h6 class="lyricBox">'
-                       .$results[$i]->GeetGhazalBhajanLyrics.'<br>'.'Published Year: '.$results[$i]->Year
+                       .$results[$i]->OtherLyricsStuffNotation.'<br>'.'Published Year: '.$results[$i]->Year
                        .'</h6>'
                        . '<a target="_blank" href="'
                        .base_url()
@@ -91,12 +91,11 @@
                 </div>    
             </div>
             
-            
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Geet Ghazal Bhajan Song Book</h4>
+                            <h4 class="modal-title">Other Song Book</h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
@@ -253,7 +252,6 @@
 <script type="text/javascript">
         $(document).ready(function () {
         
-       
         $(".detailsButton").click(function(){
         var baseUrl = "<?php echo base_url(); ?>"; 
         $("#detailsList").empty();
@@ -275,7 +273,6 @@
                 }
             });
         });
-       
             
         $(".scriptButton").click(function(){
         var baseUrl = "<?php echo base_url(); ?>"; 

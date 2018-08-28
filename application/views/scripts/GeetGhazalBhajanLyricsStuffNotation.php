@@ -25,7 +25,7 @@
     <div class="container"> 
         <div class="row">
             <div class="programmeheader col-md-12">
-                <h4>Feroza Begum Geet Ghazal Bhajan Song</h4>
+                <h4><b><?php echo $page_title;?></b></h4>
             </div>
         </div>
     </div>
@@ -48,7 +48,7 @@
                
                 echo '<div class = "col-md-4">'
                        .'<h6 class="lyricBox">'
-                       .$results[$i]->GeetGhazalBhajanLyrics.'<br>'.'Published Year: '.$results[$i]->Year
+                       .$results[$i]->GeetGhazalBhajanLyricsStaffNotation .'<br>'.'Published Year: '.$results[$i]->Year
                        .'</h6>'
                        . '<a target="_blank" href="'
                        .base_url()

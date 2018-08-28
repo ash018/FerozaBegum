@@ -111,12 +111,12 @@
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/RabindraSong') ?>">Rabindra Sangeet Lyrics</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/RabindraSong') ?>">Rabindra Sangeet Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/ModernBengaliSong') ?>">Modern Bengali Song Lyrics</a>
-                                    <a class="dropdown-item" href="<?php echo base_url('scripts/ModernBengaliSong') ?>">Modern Bengali Song Lyrics & Staff Notation</a>
+                                    <a class="dropdown-item" href="<?php echo base_url('scripts/ModernBengaliLyricsStuffNotation') ?>">Modern Bengali Song Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('') ?>">Feroza Begum's Song</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/GeetGhazalBhajanSong') ?>">Geet/ Ghazal/ Bhajan Lyrics</a>
-                                    <a class="dropdown-item" href="<?php echo base_url('scripts/GeetGhazalBhajanSong') ?>">Geet/ Ghazal/ Bhajan Lyrics & Staff Notation</a>
+                                    <a class="dropdown-item" href="<?php echo base_url('scripts/GeetGhazalBhajanLyricsStuffNotation') ?>">Geet/ Ghazal/ Bhajan Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/OthersSong') ?>">Others Lyrics</a>
-                                    <a class="dropdown-item" href="<?php echo base_url('scripts/OthersSong') ?>">Others Lyrics & Staff Notation</a>
+                                    <a class="dropdown-item" href="<?php echo base_url('scripts/OthersSongLyricsStuffNotation') ?>">Others Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('')   ?>">Script</a>
                                     <a class="dropdown-item" href="<?php echo base_url('')   ?>">Letter</a>
                                     <a class="dropdown-item" href="<?php echo base_url('')   ?>">Others</a>
@@ -126,18 +126,15 @@
                         </li>
 
 
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Kamal Das Gupta</a>
-                            <ul class="dropdown-submenu">
-                                <ul class="dropdown-menu">
-                                    <a class="dropdown-item" href="<?php echo base_url('scripts/FullVolumeKamal') ?>">Full Volume</a>
-                                </ul>
-                            </ul>
+                        <li><a class="dropdown-item" href="<?php echo base_url('scripts/FullVolumeKamal') ?>">Kamal Das Gupta</a>
+                            
                         </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Other Songbook</a>
+                        
+<!--                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Other Songbook</a>
                             <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="<?php echo base_url('scripts/FullVolumeOthers') ?>">Full Volume</a>
+                                <a class="dropdown-item" href="<?php //echo base_url('scripts/FullVolumeOthers') ?>">Full Volume</a>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Published Book</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('scripts/FullVolumeOthers') ?>">Full Volume</a>
