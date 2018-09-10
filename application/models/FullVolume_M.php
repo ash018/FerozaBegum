@@ -19,7 +19,7 @@ class FullVolume_M extends CI_Model {
     
     function getFullVolumeOthers() {
         $sql = "SELECT ID,Year,Album01,Category,SubCategory  FROM `ferozatable`
-                where Header='Songbook' and Category='Others'";
+                where Header='Songbook' and Category='Published Book'";
         $query =  $this->db->query($sql);
         return $query->result();
     }
