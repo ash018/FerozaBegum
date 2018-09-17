@@ -66,7 +66,7 @@ class NazrulSong_M extends CI_Model {
     
     function getNazrulVideo() {
         //$sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and SubCategory='Full Album' and LiveLink !=''";
-        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and LiveLink !=''";
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and SubCategory='Solo Album' and LiveLink !=''";
         $query =  $this->db->query($sql);
         return $query->result();
     }
@@ -92,10 +92,10 @@ class NazrulSong_M extends CI_Model {
     function get_current_page_records($limit, $start){
         
         if($start!=0){
-            $sql = "SELECT Album01,ID,LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and LiveLink !='' LIMIT ".$start.','.$limit;
+            $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and SubCategory='Solo Album' and LiveLink !='' LIMIT ".$start.','.$limit;
         }
         else{
-            $sql = "SELECT Album01,ID,LiveLink FROM ferozatable where Header='Music' and Category='Nazrul Sangeet' and LiveLink !='' LIMIT ".$limit;
+            $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and SubCategory='Solo Album' and LiveLink !='' LIMIT ".$limit;
         }
         $query = $this->db->query($sql);
         

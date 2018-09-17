@@ -14,6 +14,7 @@ class Scripts extends CI_Controller {
         $this->load->model('GeetGhazalBhajanSong_M');
         $this->load->model('OthersSong_M');
         $this->load->model('FullVolume_M');
+        $this->load->model('FerozaBegumSong_M');
         //$this->load->model('admin_m');
     }
     
@@ -567,6 +568,47 @@ class Scripts extends CI_Controller {
        // $data['songListID'] = $songListID;
         
         echo $this->load->view('scripts/scriptList/FullList',$data, TRUE);
+    }
+    
+    public function FerozaBegumSong(){
+       $data = array();
+        $data['page'] = 'Feroza Begum Song';
+        $data['page_title'] = 'Feroza Begum Song';
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['FerozaBegumSong'] = $this->FerozaBegumSong_M->getFerozaBegumSong(); 
+        $total_records = sizeof($data['FerozaBegumSong']);
+        
+        $config['base_url'] = base_url() . 'scripts/FerozaBegumSong/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data["results"] = $this->FerozaBegumSong_M->get_current_script_FerozaBegumSong($limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+           
+        }
+        
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('scripts/FerozaBegumSong', $data, TRUE);
+        $this->load->view('index', $data); 
     }
 
 }

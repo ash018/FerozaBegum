@@ -63,7 +63,7 @@
                     <div>
 
 
-                        <a href="<?php echo base_url('scripts'); ?>">     
+                        <a href="<?php echo base_url('catalogue/songbook'); ?>">     
                             <button  class="btn catbtn" type="submit" />Song Book</button>
                         </a> 
 
@@ -80,7 +80,7 @@
                         </button>
                     </div>	
 
-                    <!--                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>-->
+                   
 
                     <div> 
                         <div>

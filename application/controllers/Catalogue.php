@@ -47,5 +47,27 @@ class Catalogue extends CI_Controller {
         $data['main_content'] = $this->load->view('catalogue/AlbumSection', $data, TRUE);
         $this->load->view('index', $data);
     }
+    
+    public function songbook(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Song Book';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('catalogue/songbook', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function ferozabegum(){
+        $data = array();
+        $data['page'] = 'Home';
+        $data['page_title'] = 'Feroza Begum Song Book';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('catalogue/ferozabegum', $data, TRUE);
+        $this->load->view('index', $data);
+    }
 
 }

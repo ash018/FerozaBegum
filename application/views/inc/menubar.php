@@ -28,7 +28,7 @@
                         MUSIC
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" >Full Album</a>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" >Solo Album</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('music'); ?>">Nazrul Sangeet</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/RabindraSangeet'); ?>">Rabindra Sangeet</a>
@@ -112,7 +112,7 @@
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/RabindraSong') ?>">Rabindra Sangeet Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/ModernBengaliSong') ?>">Modern Bengali Song Lyrics</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/ModernBengaliLyricsStuffNotation') ?>">Modern Bengali Song Lyrics & Staff Notation</a>
-                                    <a class="dropdown-item" href="<?php echo base_url('') ?>">Feroza Begum's Song</a>
+                                    <a class="dropdown-item" href="<?php echo base_url('scripts/FerozaBegumSong') ?>">Feroza Begum's Song</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/GeetGhazalBhajanSong') ?>">Geet/ Ghazal/ Bhajan Lyrics</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/GeetGhazalBhajanLyricsStuffNotation') ?>">Geet/ Ghazal/ Bhajan Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/OthersSong') ?>">Others Lyrics</a>
