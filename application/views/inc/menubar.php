@@ -58,16 +58,22 @@
                         PROGRAMME
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="<?php echo base_url('programme/tvProgram'); ?>">TV Programme</a></li>
+                        <li><a class="dropdown-item" href="<?php echo base_url('programme/tvProgram'); ?>">TV Program</a></li>
 
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">Radio Programme</a>
+<!--                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">Video Footage</a>
                             <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="<?php echo base_url('programme') ?>">English</a>
+                                <a class="dropdown-item" href="<?php //echo base_url('programme') ?>">English</a>
                                 <a class="dropdown-item" href="#">Bengali</a>
                             </ul>
+                        </li>-->
+                        <li><a class="dropdown-item" href="<?php echo base_url('programme/videoFootage'); ?>">Video Footage</a>
+<!--                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php //echo base_url('programme') ?>">English</a>
+                                <a class="dropdown-item" href="#">Bengali</a>
+                            </ul>-->
                         </li>
 
-                        <li><a class="dropdown-item" href="<?php echo base_url('programme') ?>">Stage Show</a></li>
+                        <li><a class="dropdown-item" href="<?php echo base_url('programme/stageShow') ?>">Stage Show</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

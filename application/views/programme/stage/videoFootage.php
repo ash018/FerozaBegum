@@ -17,12 +17,12 @@
             <?php
             $i = 0;
             $c = 1;
-            $sz = sizeof($tvProgram)-(sizeof($tvProgram)-1);
-            while ($i < sizeof($tvProgram)) {
+            $sz = sizeof($videoFootage)-(sizeof($videoFootage)-1);
+            while ($i < sizeof($videoFootage)) {
 
                 //$id = substr($results[$i]->LiveLink, strrpos($results[$i]->LiveLink, '/') + 1);
                 
-                if($tvProgram[$i]->LiveLink==''){
+                if($videoFootage[$i]->LiveLink==''){
                     echo '<div class = "col-md-4">'
                         .'<div class="card text-center">'
                         .'<div class="card-header">'
@@ -31,15 +31,15 @@
                         .'</div>'
                         .'<div class="card-body">'
                         .'<h5 class="card-title">'
-                        .$tvProgram[$i]->ProgramTitle
+                        .$videoFootage[$i]->ProgramTitle
                         .'</h5>'
                         .'<p class="card-text">'
                         . '</p>'
                         .'<button id = "'
-                        .$tvProgram[$i]->EntryCode
+                        .$videoFootage[$i]->EntryCode
                         .'"'
                         .'class="btn catbtn detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
-                        .$tvProgram[$i]->EntryCode
+                        .$videoFootage[$i]->EntryCode
                         .'">Details</button>'
                         .'<br>'
                         .'&nbsp;'
@@ -53,24 +53,24 @@
                         .'<div class="card text-center">'
                         .'<div class="card-header">'
                         .$page_title.'-'
-                        .$sz    
+                        .$sz  
                         .'</div>'
                         .'<div class="card-body">'
                         .'<h5 class="card-title">'
-                        .$tvProgram[$i]->ProgramTitle
+                        .$videoFootage[$i]->ProgramTitle
                         .'</h5>'
                         .'<p class="card-text">'
                         .'<button id = "'
-                        .$tvProgram[$i]->EntryCode
+                        .$videoFootage[$i]->EntryCode
                         .'"'
                         .'class="btn catbtn detailsButton" type="button" data-toggle="modal" data-target="#myModal" data-node="'
-                        .$tvProgram[$i]->EntryCode
+                        .$videoFootage[$i]->EntryCode
                         .'">Details</button>'
                         .'<br>'
                         .'&nbsp;'    
                         . '</p>'
                         .'<a href="'
-                        .$tvProgram[$i]->LiveLink
+                        .$videoFootage[$i]->LiveLink
                         . '" class="btn btn-primary">Live Link</a>'
                         .'</div>'
                         .'<div class="card-footer text-muted">'
@@ -79,8 +79,8 @@
                 }
                 
                 $i++;
-                
                 $sz++;
+                
                 
                 ?>
 
