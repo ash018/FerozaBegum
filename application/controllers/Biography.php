@@ -25,5 +25,16 @@ class Biography extends CI_Controller {
         $data['main_content'] = $this->load->view('biography/award_v', $data, TRUE);
         $this->load->view('index', $data);
     }
+    
+    public function bangla(){
+        $data = array();
+        $data['page'] = 'Biography';
+        $data['page_title'] = 'Biography';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('biography/bangla_v', $data, TRUE);
+        $this->load->view('index', $data);
+    }
 
 }

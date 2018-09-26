@@ -18,7 +18,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="<?php echo base_url('biography'); ?>">English</a></li>
                         <li class="divider" role="separator"></li>
-                        <li><a class="dropdown-item" href="#">Bangla</a></li>
+                        <li><a class="dropdown-item" href="<?php echo base_url('biography/bangla'); ?>">Bangla</a></li>
                         <li class="divider" role="separator"></li>
                         <li><a class="dropdown-item" href="<?php echo base_url('biography/Awards'); ?>">Awards</a></li>
                     </ul>
