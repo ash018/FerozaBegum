@@ -13,9 +13,40 @@ class NazrulSong_M extends CI_Model {
         return $query->result();
     }
     
+    function getSinglesRecording($page_title){
+        $this->db->select('Album01,ID, LiveLink');
+        $this->db->from('ferozatable');
+        $where = "Header='Music' and Category='$page_title' and SubCategory='Single Song' and LiveLink !=''";
+        $this->db->where($where);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
+    function getSinglesRabindraRecording($page_title){
+        $this->db->select('Album01,ID, LiveLink');
+        $this->db->from('ferozatable');
+        $where = "Header='Music' and Category='$page_title' and SubCategory='Single Song' and LiveLink !=''";
+        $this->db->where($where);
+        $query = $this->db->get();
+        
+        return $query->result();
+    }
+    
     function get_current_page_records_MixedRecording($page_title,$limit, $start){
 
         $sql = "SELECT Album01,ID,LiveLink FROM ferozatable where Header='Music' and Category='".$page_title."' and SubCategory='Mixed Album' and LiveLink !='' LIMIT ".$start.','.$limit;
+        
+        $query =  $this->db->query($sql);
+        return $query->result(); 
+            
+    }
+    
+    
+    
+    function get_current_page_records_SinglesRecording($page_title,$limit, $start){
+
+        $sql = "SELECT Album01,ID,LiveLink FROM ferozatable where Header='Music' and Category='".$page_title."' and SubCategory='Single Song' and LiveLink !='' LIMIT ".$start.','.$limit;
         $query =  $this->db->query($sql);
         return $query->result(); 
             

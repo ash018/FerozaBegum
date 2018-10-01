@@ -43,6 +43,13 @@
                                 <a class="dropdown-item" href="<?php echo base_url('music/MixedModernBengaliSong'); ?>">Modern Bengali Song</a>
                             </ul>
                         </li>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Singles</a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo base_url('music/Singles'); ?>">Nazrul Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/SinglesRabindraSangeet'); ?>">Rabindra Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/SinglesModernBengaliSong'); ?>">Modern Bengali Song</a>
+                            </ul>
+                        </li>
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Collected Recording</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('music/Collected'); ?>">Nazrul Sangeet</a>
