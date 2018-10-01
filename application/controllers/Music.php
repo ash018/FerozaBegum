@@ -474,8 +474,8 @@ class Music extends CI_Controller {
         $this->load->library('pagination');
         
         $data = array();
-        $data['page'] = 'Modern Bengali Song | Mixed Album';
-        $data['page_title'] = 'Modern Bengali Song | Mixed Album';
+        $data['page'] = 'Modern Bengali Song | Single Song';
+        $data['page_title'] = 'Modern Bengali Song | Single Song';
         $page_title = 'Modern Bengali Song';
         
         
