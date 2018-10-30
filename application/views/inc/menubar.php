@@ -34,26 +34,33 @@
                                 <a class="dropdown-item" href="<?php echo base_url('music/RabindraSangeet'); ?>">Rabindra Sangeet</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/ModernBengaliSong'); ?>">Modern Bengali Song</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/KabboGeetiSong'); ?>">Kabbo Geeti</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/HindustaniSong'); ?>">Hindustani Geet</a>
                             </ul>
                         </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Mixed Album</a>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" >Extended Play</a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo base_url('music'); ?>">Nazrul Sangeet</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/ModernBengaliSong'); ?>">Modern Bengali Song</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/RabindraSangeet'); ?>">Hindustani Geet</a>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Mixed Album</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('music/Mixed'); ?>">Nazrul Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/MixedRabindraSangeet'); ?>">Rabindra Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/MixedModernBengaliSong'); ?>">Modern Bengali Song</a>
                             </ul>
                         </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Singles</a>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Singles</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('music/Singles'); ?>">Nazrul Sangeet</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/SinglesRabindraSangeet'); ?>">Rabindra Sangeet</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/SinglesModernBengaliSong'); ?>">Modern Bengali Song</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/KabboGeetiSong'); ?>">Kabbo Geeti</a>
+                                <a class="dropdown-item" href="<?php echo base_url('music/HindustaniSong'); ?>">Hindustani Geet</a>
                             </ul>
                         </li>
-                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="Music.html">Collected Recording</a>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Collected Recordings</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('music/Collected'); ?>">Nazrul Sangeet</a>
-                                <a class="dropdown-item" href="<?php echo base_url('music/CollectedRabindraSangeet'); ?>">Rabindra Sangeet</a>
                                 <a class="dropdown-item" href="<?php echo base_url('music/CollectedModernBengaliSong'); ?>">Modern Bengali Song</a>
                             </ul>
                         </li>
