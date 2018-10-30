@@ -156,8 +156,10 @@ img {
 } 
 
 .f_body_text_right {
+    font-family: TrebuchetFont;
     margin-top:40px; 
-    font-size:13px;
+    font-size:15px;
+    
 }
 .f_search{
   /*-webkit-background-clip:padding-box;*/
