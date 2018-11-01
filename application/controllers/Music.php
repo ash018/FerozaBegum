@@ -992,4 +992,64 @@ class Music extends CI_Controller {
         
         $this->load->view('index', $data);
     }
+    
+    public function HindustaniSong(){
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        
+        $this->load->library('pagination');
+        
+        $data = array();
+        $data['page'] = 'Hindustani Geet';
+        $data['page_title'] = 'Hindustani Geet';
+        $page_title = 'Hindustani Geet';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        // load db and model
+        
+        
+ 
+        // init params
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['youtubeLink'] = $this->NazrulSong_M->getHindustaniSong();
+        $total_records = sizeof($data['youtubeLink']);
+        
+        $config['base_url'] = base_url() . 'Music/HindustaniSong/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+ 
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data["results"] = $this->NazrulSong_M->get_current_page_records_Hindustani_Song($limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+        }
+        
+        else{
+            $data["results"] = null;
+        }
+         
+        //$this->load->view('user_listing', $params);
+        
+        $this->pagination->initialize($data);
+        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYear($page_title);
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/album/kabbo_geeti_song_v', $data, TRUE);
+        
+        $this->load->view('index', $data);
+    }
+    
 }

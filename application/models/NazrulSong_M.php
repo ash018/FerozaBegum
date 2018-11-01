@@ -75,6 +75,28 @@ class NazrulSong_M extends CI_Model {
         return false;
     }
     
+    function get_current_page_records_Hindustani_Song($limit, $start){
+        if($start!=0){
+            $sql = "SELECT Album01,ID,LiveLink FROM ferozatable where Header='Music' and Category='Hindustani Geet' and LiveLink !='' LIMIT ".$start.','.$limit;
+        }
+        else{
+            $sql = "SELECT Album01,ID,LiveLink FROM ferozatable where Header='Music' and Category='Hindustani Geet' and LiveLink !='' LIMIT ".$limit;
+        }
+        $query = $this->db->query($sql);
+        
+        if ($query->num_rows() > 0) 
+        {
+            foreach ($query->result() as $row) 
+            {
+                $data[] = $row;
+            }
+             
+            return $data;
+        }
+ 
+        return false;
+    }
+    
     function getCollectedRecording($page_title){
         $this->db->select('Album01,ID, LiveLink');
         $this->db->from('ferozatable');
@@ -116,6 +138,12 @@ class NazrulSong_M extends CI_Model {
     
     function getKabboGeetiSong(){
         $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Kabbo Geeti Song' and SubCategory='Full Album' and LiveLink !=''";
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+    
+    function getHindustaniSong(){
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='Hindustani Geet' and SubCategory='Full Album' and LiveLink !=''";
         $query = $this->db->query($sql);
         return $query->result();
     }
