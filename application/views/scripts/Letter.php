@@ -25,7 +25,7 @@
     <div class="container"> 
         <div class="row">
             <div class="programmeheader col-md-12">
-                <h4>Feroza Begum Others Song</h4>
+                <h4>Feroza Begum <?php echo $page_title?></h4>
             </div>
         </div>
     </div>

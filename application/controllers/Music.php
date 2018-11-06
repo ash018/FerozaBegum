@@ -210,6 +210,15 @@ class Music extends CI_Controller {
         echo $this->load->view('music/MusicList/FullList',$data, TRUE);
     }
     
+    public function getMixedSongList(){
+        $songListID = $this->input->get('songListID',TRUE);
+        $songID = $this->input->get('songID',TRUE);
+        
+        $data['FullSongList'] =$this->NazrulSong_M->getMixedFullSongList($songListID,$songID);
+        $data['songListID'] = $songListID;
+        echo $this->load->view('music/MusicList/FullList',$data, TRUE);
+    }
+    
     public function getSongDetailsList(){
         $detailsID = $this->input->get('detailsID',TRUE);
         //echo $detailsID;
@@ -236,7 +245,7 @@ class Music extends CI_Controller {
         $data['page'] = 'Nazrul Sangeet | Mixed Album';
         $data['page_title'] = 'Nazrul Sangeet | Mixed Album';
         $page_title = 'Nazrul Sangeet';
-        
+        $SubCategory = 'Mixed Album';
         
         // init params
         
@@ -267,7 +276,7 @@ class Music extends CI_Controller {
         $this->pagination->initialize($data);
         
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYearWithSubCategory($page_title,$SubCategory);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('music/Mixed/nazrul_sangeet_c', $data, TRUE);
         
@@ -315,7 +324,7 @@ class Music extends CI_Controller {
         $this->pagination->initialize($data);
         
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYear($page_title);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('music/Singles/nazrul_sangeet_c', $data, TRUE);
         
@@ -412,9 +421,9 @@ class Music extends CI_Controller {
         $this->pagination->initialize($data);
         
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYear($page_title);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
-        $data['main_content'] = $this->load->view('music/Mixed/nazrul_sangeet_c', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Singles/rabindra_sangeet_c', $data, TRUE);
         
         $this->load->view('index', $data);
     }
@@ -508,9 +517,9 @@ class Music extends CI_Controller {
         $this->pagination->initialize($data);
         
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYear($page_title);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
-        $data['main_content'] = $this->load->view('music/Mixed/nazrul_sangeet_c', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Mixed/modern_bengali_c', $data, TRUE);
         
         $this->load->view('index', $data);
     }
@@ -524,6 +533,7 @@ class Music extends CI_Controller {
         $data['page'] = 'Nazrul Sangeet | Collected Recording';
         $data['page_title'] = 'Nazrul Sangeet | Collected Recording';
         $page_title = 'Nazrul Sangeet';
+        $SubCategory = 'Collected Recording';
         // init params
         $limit_per_page = 10;
         $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
@@ -547,7 +557,7 @@ class Music extends CI_Controller {
         $this->pagination->initialize($data);
         
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYearWithSubCategory($page_title,$SubCategory);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('music/Collected/nazrul_sangeet_c', $data, TRUE);
         
@@ -616,7 +626,7 @@ class Music extends CI_Controller {
         $data['page'] = 'Modern Bengali Song | Collected Recording';
         $data['page_title'] = 'Modern Bengali Song | Collected Recording';
         $page_title = 'Modern Bengali Song';
-        
+        $SubCategory = 'Collected Recording';
         
         // init params
         
@@ -647,9 +657,9 @@ class Music extends CI_Controller {
         $this->pagination->initialize($data);
         
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYearWithSubCategory($page_title,$SubCategory);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
-        $data['main_content'] = $this->load->view('music/Collected/nazrul_sangeet_c', $data, TRUE);
+        $data['main_content'] = $this->load->view('music/Collected/modern_bengali_c', $data, TRUE);
         
         $this->load->view('index', $data);
         

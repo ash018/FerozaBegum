@@ -110,31 +110,9 @@
                                 <?php } ?>
                                 
                                 <?php
-//                $nRange = ($rangeYear[0]->Diff)/10 + 1;
-//                echo '<div class="row">';
-//                for($i=0;$i<$nRange;$i++){
-//                    if(strval(((int)($rangeYear[0]->MN))+$i*10)!='2010'){
-//                        echo '<div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;"> <div class="dropup">';
-//                        echo '<button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="'.strval((int)($rangeYear[0]->MN))
-//                        . '">'.strval(((int)($rangeYear[0]->MN))+$i*10).'-'.strval((((int)($rangeYear[0]->MN))+$i*10)+9).'</button>';   
-//                        echo '</div></div>';
-//                    }
-//                    else{
-//                        echo '<div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;"> <div class="dropup">';
-//                        echo '<button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal">'.strval(((int)($rangeYear[0]->MN))+$i*10).'-'.strval((((int)($rangeYear[0]->MN))+$i*10)+4).'</button>';   
-//                        echo '</div></div>';
-//                    }
-//                }
-//                echo '</div>';
-                
-            ?>
-                                
-                            </div>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
+                $nRange = ($rangeYear[0]->Diff)/10 + 1;
+                echo '<div class="row">';
+                echo '<div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
                                 <div class="dropup">
                                     <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="1">
                                         FULL LIST
@@ -160,101 +138,29 @@
                                     </div>
 
                                 </div>
+                            </div>';
+                for($i=0;$i<$nRange;$i++){
+                    if(strval(((int)($rangeYear[0]->MN))+$i*10)!='2010'){
+                        echo '<div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;"> <div class="dropup">';
+                        echo '<button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="'.strval(((int)($rangeYear[0]->MN))+$i*10)
+                        . '">'.strval(((int)($rangeYear[0]->MN))+$i*10).'-'.strval((((int)($rangeYear[0]->MN))+$i*10)+9).'</button>';   
+                        echo '</div></div>';
+                    }
+                    else{
+                        echo '<div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;"> <div class="dropup">';
+                        echo '<button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="'.strval(((int)($rangeYear[0]->MN))+$i*10)
+                        . '">'.strval(((int)($rangeYear[0]->MN))+$i*10).'-'.strval((((int)($rangeYear[0]->MN))+$i*10)+4).'</button>';   
+                        echo '</div></div>';
+                    }
+                }
+                echo '</div>';
+                
+            ?>
+                                
                             </div>
-
-                            <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
-                                <div class="dropup">
-                                    <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="2">
-                                        1970-1979
-                                    </button>  
-                                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-                                        <div class="songlist">
-                                            Song List				
-                                        </div>	 
-
-                                        <div class="card-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                                <span aria-hidden="true" style="color: black;">×</span>
-                                            </button>
-
-                                        </div>	
-                                    </div>	
-                                </div>
-                            </div>
-
-                            <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
-                                <div class="dropup">
-                                    <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1" data-toggle="modal" data-node="3">
-                                        1980-1989
-                                    </button>  
-                                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-
-
-                                        <div class="card-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                                <span aria-hidden="true" style="color: black;">×</span>
-                                            </button>
-
-                                        </div>	
-                                    </div>	
-                                </div>
-                            </div>
-
-                            <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
-                                <div class="dropup">
-                                    <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1" data-toggle="modal" data-node="4">
-                                        1990-1999
-                                    </button>  
-                                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-
-
-                                        <div class="card-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                                <span aria-hidden="true" style="color: black;">×</span>
-                                            </button>
-
-                                        </div>	
-                                    </div>	
-                                </div>
-                            </div>
-                            <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
-                                <div class="dropup">
-                                    <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1" data-toggle="modal" data-node="5">
-                                        2000-2014
-                                    </button>  
-                                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-
-
-                                        <div class="card-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                                <span aria-hidden="true" style="color: black;">×</span>
-                                            </button>
-
-                                        </div>	
-                                    </div>	
-                                </div>
-                            </div>
-
-                            <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
-                                <div class="dropup">
-                                    <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1" data-toggle="modal" data-node="6">
-                                        Others
-                                    </button>  
-                                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-
-
-                                        <div class="card-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                                <span aria-hidden="true" style="color: black;">×</span>
-                                            </button>
-
-                                        </div>	
-                                    </div>	
-                                </div>
-                            </div>
-
-
                         </div>
+
+                        
 
                     </div>
                 </div>	 

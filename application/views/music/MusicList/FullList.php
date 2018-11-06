@@ -54,7 +54,7 @@
                                         <th>Release Year</th>
                                         <th>Record Label</th>
                                         <th>Song Title</th>
-                                        <th>Video</th>
+                                        <th>Live Link</th>
                                     </tr>
                                 </thead>
                    
@@ -96,7 +96,7 @@
                                         <td><?php echo $result->SongTitle;?></td>
                                         <?php 
                                             if($result->LiveLink !=''){
-                                                    echo '<td><a href="'.$result->LiveLink.'">YouTube Link</a></td>';
+                                                    echo '<td><a target="_blank" href="'.$result->LiveLink.'">YouTube Link</a></td>';
                                             }
                                             else {
                                                 echo '<td>Link Not Published Yet</td>';

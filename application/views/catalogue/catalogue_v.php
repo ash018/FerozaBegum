@@ -40,6 +40,20 @@
 
 
                     </div>
+                    
+                    <div>
+
+                        <a href="<?php echo base_url(''); ?>" >
+                            <button  class="btn catbtn" type="submit" />Kabbo Geeti</button>
+                        </a>
+
+                        <a href="<?php echo base_url(''); ?>" >
+                            <button class="btn catbtn" type="submit">
+                                Hindustani <br> Song
+                            </button>
+                        </a>
+
+                    </div>
 
                     <div>
 
@@ -47,12 +61,13 @@
                             <button  class="btn catbtn" type="submit" />TV Programme</button>
                         </a>
 
+                        <a href="<?php echo base_url('programme/videoFootage'); ?>" >
+                            <button class="btn catbtn" type="submit">
+                                Radio<br>Programme
+                            </button>
+                        </a>
 
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            Radio<br>Programme
-                        </button>
-
-                        <a href="<?php echo base_url('programme'); ?>" >
+                        <a href="<?php echo base_url('programme/stageShow'); ?>" >
                             <button  class="btn catbtn" type="submit" />Stage Show</button>
                         </a>
 
@@ -62,36 +77,47 @@
 
                     <div>
 
-
                         <a href="<?php echo base_url('catalogue/songbook'); ?>">     
                             <button  class="btn catbtn" type="submit" />Song Book</button>
-                        </a> 
+                        </a>
+                        
+                        <a href="<?php echo base_url('scripts/Script'); ?>"> 
+                            <button class="btn catbtn" type="submit">
+                                Script
+                            </button>
+                        </a>
 
+                        <a href="<?php echo base_url('scripts/Letter'); ?>"> 
+                            <button class="btn catbtn" type="submit">
+                                Letters
+                            </button>
+                        </a>
 
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            Letters
-                        </button>
-
-
-
-
-                        <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                            Others
-                        </button>
+                        <a href="<?php echo base_url('scripts/Others'); ?>"> 
+                            <button class="btn catbtn" type="submit">
+                                Others
+                            </button>
+                        </a>
+                        
+                        
+                        
                     </div>	
 
                    
 
                     <div> 
-                        <div>
-
-
-
-                            <button class="btn catbtn" type="button" id="about-us" data-toggle="dropdown">
-                                Audio<br>Recording
-                            </button>
-
-                        </div>
+                        
+                        <button class="btn spacebtn" type="button" id="about-us" data-toggle="dropdown">
+                            
+                        </button>
+                        
+                        <button class="btn tmpbtn" type="button" id="about-us" data-toggle="dropdown">
+                            Audio<br>Recording
+                        </button>
+                        
+                        <button class="btn spacebtn" type="button" id="about-us" data-toggle="dropdown">
+                            
+                        </button>
 
                     </div>
 

@@ -108,12 +108,10 @@ class NazrulSong_M extends CI_Model {
     }
     
     function get_current_page_records_CollectedRecording($page_title,$limit, $start){
-        $this->db->select('Album01,ID, LiveLink');
-        $this->db->from('ferozatable',$limit,$start);
-        $where = "Header='Music' and Category='$page_title' and SubCategory='Collected Recording' and LiveLink !=''";
-        $this->db->where($where);
-        $query = $this->db->get();
         
+        
+        $sql = "SELECT Album01,ID, LiveLink FROM ferozatable where Header='Music' and Category='$page_title' and SubCategory='Collected Recording' and LiveLink !='' LIMIT ".$start.','.$limit;
+        $query =  $this->db->query($sql);
         return $query->result();
     }
     
@@ -303,6 +301,15 @@ class NazrulSong_M extends CI_Model {
         return $query->result();
     }
     
+    function getRangeYearWithSubCategory($page_title,$SubCategory){
+        $sql = "SELECT TRUNCATE(MIN(ReleaseYearAlbum),-1) as MN,TRUNCATE(MAX(ReleaseYearAlbum),-1) as MX,"
+                . " TRUNCATE(MAX(ReleaseYearAlbum),-1) - TRUNCATE(MIN(ReleaseYearAlbum),-1) as Diff"
+                . " FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='".$page_title."' and SubCategory='".$SubCategory."'"
+                . " and ReleaseYearAlbum !='Undated' and ReleaseYearAlbum !=''";
+        $query =  $this->db->query($sql);
+        return $query->result();
+    }
+    
     function getFullSongBookList($SongbookID,$bookID){
         if($SongbookID==1 && $bookID==1){
             $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
@@ -330,7 +337,23 @@ class NazrulSong_M extends CI_Model {
         return $query->result();
     }
     
+    function getMixedFullSongList($listID,$songID){
+        if($listID > 1900 && $songID == 1){
+            $bYearlistID = $listID + 9;
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet' and SubCategory='Mixed Album' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '$listID' and '$bYearlistID'";
+            $query =  $this->db->query($sql);
+            return $query->result();
+        }
+    }
+    
     function getCollectedFullSongList($listID,$songID){
+        
+        if($listID > 1900 && $songID == 1){
+            $bYearlistID = $listID + 9;
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet' and SubCategory='Collected Recording' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '$listID' and '$bYearlistID'";
+            $query =  $this->db->query($sql);
+        }
+        
         if($listID == 1 && $songID == 1){
             $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet' and SubCategory='Collected Recording'";
             $query =  $this->db->query($sql);
@@ -506,6 +529,25 @@ class NazrulSong_M extends CI_Model {
     }
     
     function getFullSongList($listID,$songID){
+        
+        if($listID > 1900 && $songID == 1){
+            $bYearlistID = $listID + 9;
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '$listID' and '$bYearlistID'";
+            $query =  $this->db->query($sql);
+        }
+        
+        if($listID > 1900 && $songID == 2){
+            $bYearlistID = $listID + 9;
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Rabindra Sangeet' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '$listID' and '$bYearlistID'";
+            $query =  $this->db->query($sql);
+        }
+        
+        if($listID > 1900 && $songID == 3){
+            $bYearlistID = $listID + 9;
+            $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Modern Bengali Song' and CAST(ReleaseYearAlbum as decimal(10,5)) BETWEEN '$listID' and '$bYearlistID'";
+            $query =  $this->db->query($sql);
+        }
+        
         if($listID == 1 && $songID == 1){
             $sql = "SELECT ID,SubCategory,LiveLink,RecordLabel,ReleaseYearAlbum,AlbumTitle,`SongTitle` FROM `ferozatable` WHERE AlbumTitle!='' and SongTitle!='' and Category='Nazrul Sangeet'";
             $query =  $this->db->query($sql);
@@ -651,6 +693,7 @@ class NazrulSong_M extends CI_Model {
                 . "`Album01`,`Album02`, `Album03`,`Album04`,`Album05`,`Album06`,`Album07`,`Album08`,`Album09`,`Album10`"
                 .",Remarks,AlbumFormat,VocalArtist,Lyricist,MusicComposer,MusicDirector,MusicArranger,SoundRecordist,RecordingStudio,Producer,RecordLabel"
                 . " from `ferozatable` where Album01 = '" . $detailsID."'";
+        
         $query =  $this->db->query($sql);
         return $query->result();
     }

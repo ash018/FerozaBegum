@@ -302,6 +302,23 @@ td { width: 33%; }
 }
 
 
+.tmpbtn{
+	color: #fff;
+        background-color: #2fb7c8;
+        border-color: #FF0000;
+        border-width: 2px;
+        border-radius: 0rem;
+        padding: 8px 10px;
+        line-height: 1.40;
+	margin-top:8px;
+	margin-bottom:4px;
+	font-family:Myriad Pro;
+	font-size:14px;
+	width:148px;
+	height:55px;
+}
+
+
 .catbtn{
 	color: #fff;
         background-color: #2fb7c8;
@@ -330,6 +347,21 @@ td { width: 33%; }
 	font-size:14px;
 	width:198px;
 	height:65px;
+}
+
+.spacebtn{
+	color: #8e8e98;
+        background-color: #8e8e98;
+        border-color: #8e8e98;
+        border-radius: 0rem;
+        padding: 8px 10px;
+        line-height: 1.40;
+	margin-top:8px;
+	margin-bottom:4px;
+	font-family:Myriad Pro;
+	font-size:14px;
+	width:148px;
+	height:55px;
 }
 
 .searchbtn{

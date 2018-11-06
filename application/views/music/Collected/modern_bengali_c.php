@@ -105,7 +105,7 @@
                 $nRange = ($rangeYear[0]->Diff)/10 + 1;
                 
                 echo '<div class="row">';
-                echo '<div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
+                echo '<div class="col-md-6" style="margin-bottom: 30px; margin-right: 10px;">  
                                 <div class="dropup">
                                     <button class="btn btn-custom ferozaButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="1">
                                         FULL LIST
