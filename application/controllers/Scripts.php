@@ -77,8 +77,15 @@ class Scripts extends CI_Controller {
             $data['title'] = $SongbookID."-".($SongbookID+9);
         }
         
-        
-        echo $this->load->view('scripts/scriptList/RabindraDetailList',$data, TRUE);
+        if($script_id == 1){
+            echo $this->load->view('scripts/scriptList/RabindraDetailList',$data, TRUE);
+        }
+        if($script_id == 2){
+            echo $this->load->view('scripts/scriptList/ModernDetailList',$data, TRUE);
+        }
+        if($script_id == 3){
+            echo $this->load->view('scripts/scriptList/ModernStuffDetailList',$data, TRUE);
+        }
     }
     
     public function getStuffNotationWithID(){
@@ -341,7 +348,8 @@ class Scripts extends CI_Controller {
         $data = array();
         $data['page'] = 'Modern Bengali Song Lyrics Stuff Notation';
         $data['page_title'] = 'Modern Bengali Song Lyrics Stuff Notation';
-        
+        $Category = 'Feroza Begum';
+        $filter = 'ModernBengaliLyricsStuffNotation';
         
         $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
         $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
@@ -373,7 +381,7 @@ class Scripts extends CI_Controller {
            
         }
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYearSong($Category,$filter);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('scripts/ModernBengaliLyricsStuffNotation', $data, TRUE);
         $this->load->view('index', $data);
