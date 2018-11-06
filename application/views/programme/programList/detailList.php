@@ -1,56 +1,89 @@
+<div class="col-md-12">
 <?php
    //print_r($detailsList[0]->LiveLink);
    
-   var_dump($ProgramList); 
-//   $id='';
-//   if($detailsList[0]->LiveLink!=''){
-//        $id = substr($detailsList[0]->LiveLink, strrpos($detailsList[0]->LiveLink, '/') + 1);
-//   }
-//   $detailListSize = 0;
-//   if($detailsList[0]->Album02!=''){
-//       $detailListSize++;
-//   }
-//   if($detailsList[0]->Album03!=''){
-//       $detailListSize++;
-//   }
-//   if($detailsList[0]->Album04!=''){
-//       $detailListSize++;
-//   }
-//   if($detailsList[0]->Album05!=''){
-//       $detailListSize++;
-//   }
-//   if($detailsList[0]->Album06!=''){
-//       $detailListSize++;
-//   }
-//   if($detailsList[0]->Album07!=''){
-//       $detailListSize++;
-//   }
-//   if($detailsList[0]->Album08!=''){
-//       $detailListSize++;
-//   }
-//   if($detailsList[0]->Album09!=''){
-//       $detailListSize++;
-//   }
-//   if($detailsList[0]->Album10!=''){
-//       $detailListSize++;
-//   }
-//   
-//   //echo $detailListSize;
-   
-   
-?>
+   //var_dump($ProgramList); 
 
-<!--<div id="dupSong" >
-    <?php if($id!=''){
-        //echo '<iframe width="470" height="380" src="https://www.youtube.com/embed/'.$id.'" frameborder="0" allowfullscreen></iframe>';
+    
+    if ($ProgramList[0]->ProgramTitle != '') {
+        echo '<h7><strong>Program Title: </strong>' . $ProgramList[0]->ProgramTitle . '</h7><br>';
+    }
+   
+    if ($ProgramList[0]->ProgramDate != '') {
+        echo '<h7><strong>Program Date: </strong>' . $ProgramList[0]->ProgramDate . '</h7><br>';
     }
     
+    if ($ProgramList[0]->ProgramLocationChannel != '') {
+        echo '<h7><strong>Program Location Channel: </strong>' . $ProgramList[0]->ProgramLocationChannel . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->AlbumFormat != '') {
+        echo '<h7><strong>Album Format: </strong>' . $ProgramList[0]->AlbumFormat . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->Genre != '') {
+        echo '<h7><strong>Genre: </strong>' . $ProgramList[0]->Genre . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->Host != '') {
+        echo '<h7><strong>Host: </strong>' . $ProgramList[0]->Host . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->Interviewee != '') {
+        echo '<h7><strong>Interviewee: </strong>' . $ProgramList[0]->Interviewee . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->VocalArtist != '') {
+        echo '<h7><strong>Vocal Artist: </strong>' . $ProgramList[0]->VocalArtist . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->Lyricist != '') {
+        echo '<h7><strong>Lyricist: </strong>' . $ProgramList[0]->Lyricist . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->MusicComproser != '') {
+        echo '<h7><strong>Music Comproser: </strong>' . $ProgramList[0]->MusicComproser . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->MusicArranger != '') {
+        echo '<h7><strong>Music Arranger: </strong>' . $ProgramList[0]->MusicArranger . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->MusicDirector != '') {
+        echo '<h7><strong>Music Arranger: </strong>' . $ProgramList[0]->MusicDirector . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->SoundRecordist != '') {
+        echo '<h7><strong>Sound Recordist: </strong>' . $ProgramList[0]->SoundRecordist . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->RecordingStudio != '') {
+        echo '<h7><strong>Recording Studio: </strong>' . $ProgramList[0]->RecordingStudio . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->Producer != '') {
+        echo '<h7><strong>Producer: </strong>' . $ProgramList[0]->Producer . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->Production != '') {
+        echo '<h7><strong>Production: </strong>' . $ProgramList[0]->Production . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->Copyright != '') {
+        echo '<h7><strong>Copyright: </strong>' . $ProgramList[0]->Copyright . '</h7><br>';
+    }
+   
+?>
+</div>
+<!--<div id="dupSong" >
+   
+        //echo '<iframe width="470" height="380" src="https://www.youtube.com/embed/'.$id.'" frameborder="0" allowfullscreen></iframe>';
+   
+    
     ?>
-    <iframe width="470" height="380" src="https://www.youtube.com/embed/<?php //echo $id;?>" frameborder="0" allowfullscreen></iframe>
+   
     <?php
-//    if ($detailsList[0]->SongTitle != '') {
-//        echo '<h7><strong>Song Title: </strong>' . $detailsList[0]->SongTitle . '</h7><br>';
-//    }
+    
 //    if ($detailsList[0]->Category != '') {
 //        echo '<h7><strong>Category: </strong>' . $detailsList[0]->Category . '</h7><br>';
 //    }

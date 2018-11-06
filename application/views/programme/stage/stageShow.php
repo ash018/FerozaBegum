@@ -70,7 +70,7 @@
                         .'<br>'
                         .'&nbsp;'    
                         . '</p>'
-                        .'<a href="'
+                        .'<a target="_blank" href="'
                         .$stageShow[$i]->LiveLink
                         . '" class="btn btn-primary">Live Link</a>'
                         .'</div>'
@@ -115,70 +115,11 @@
             </div>
         
         
-        <div class = "row">
-
-            <div class = "col-md-4">
-                <img src = "<?php echo base_url();?>asset/img/Programme.jpg" class = "img-responsive">
-                <div class = "col-md-12">
-                    <div class="mainhader">Nazrul Jayanti Programme</div>
-                    <div class="subheader" >Banga Shammalon, USA, 1998</div>
-                </div>
-            </div>
-
-            <div class = "col-md-4">
-                <img src = "<?php echo base_url();?>asset/img/Programme.jpg" class = "img-responsive">
-                <div class = "col-md-12">
-                    <div class="mainhader">Nazrul Jayanti Programme</div>
-                    <div class="subheader">Banga Shammalon, USA, 1998</div>
-                </div>
-            </div>
-
-            <div class = "col-md-4">
-                <img src = "<?php echo base_url();?>asset/img/Programme.jpg" class = "img-responsive">
-                <div class = "col-md-12">
-                    <div class="mainhader">Nazrul Jayanti Programme</div>
-                    <div class="subheader" >Banga Shammalon, USA, 1998</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="container">
-
-        <table class="table table-bordered" id="programtable">
-            <thead class="table-content">
-                <tr>
-                    <th>SL</th>
-                    <th>Programme Title</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody class="tablefont">
-                <tr>
-                    <td>01</td>
-                    <td>Nazrul Jayanti Programme<br>Banga Shammalon, USA, 1998</td>
-                    <td>
-                        <audio controls>
-                            <source src="" type="audio/mp4">
-                        </audio>	
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>01</td>
-                    <td>Nazrul Jayanti Programme<br>Banga Shammalon, USA, 1998</td>
-                    <td>
-                        <audio controls>
-                            <source src="" type="audio/mp4">
-                        </audio>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
         
     </div>
+
+
+    
     <br>
    
 
