@@ -4,7 +4,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!--<a class="navbar-brand" href="#">Navbar</a>-->
+       
 
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
@@ -74,17 +74,9 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="<?php echo base_url('programme/tvProgram'); ?>">TV Program</a></li>
 
-<!--                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">Video Footage</a>
-                            <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="<?php //echo base_url('programme') ?>">English</a>
-                                <a class="dropdown-item" href="#">Bengali</a>
-                            </ul>
-                        </li>-->
-                        <li><a class="dropdown-item" href="<?php echo base_url('programme/videoFootage'); ?>">Video Footage</a>
-<!--                            <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="<?php //echo base_url('programme') ?>">English</a>
-                                <a class="dropdown-item" href="#">Bengali</a>
-                            </ul>-->
+
+                        <li><a class="dropdown-item" href="<?php echo base_url('programme/videoFootage'); ?>">Radio Program</a>
+
                         </li>
 
                         <li><a class="dropdown-item" href="<?php echo base_url('programme/stageShow') ?>">Stage Show</a></li>
@@ -137,9 +129,9 @@
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/GeetGhazalBhajanLyricsStuffNotation') ?>">Geet/ Ghazal/ Bhajan Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/OthersSong') ?>">Others Lyrics</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/OthersSongLyricsStuffNotation') ?>">Others Lyrics & Staff Notation</a>
-                                    <a class="dropdown-item" href="<?php echo base_url('')   ?>">Script</a>
-                                    <a class="dropdown-item" href="<?php echo base_url('')   ?>">Letter</a>
-                                    <a class="dropdown-item" href="<?php echo base_url('')   ?>">Others</a>
+                                    <a class="dropdown-item" href="<?php echo base_url('scripts/Script')?>">Script</a>
+                                    <a class="dropdown-item" href="<?php echo base_url('scripts/Letter')?>">Letter</a>
+                                    <a class="dropdown-item" href="<?php echo base_url('scripts/Others')?>">Others</a>
                                 </ul>
                             </ul>
 
@@ -150,11 +142,7 @@
                             
                         </li>
                         
-<!--                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Other Songbook</a>
-                            <ul class="dropdown-menu">
-                                <a class="dropdown-item" href="<?php //echo base_url('scripts/FullVolumeOthers') ?>">Full Volume</a>
-                            </ul>
-                        </li>-->
+
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="">Published Book</a>
                             <ul class="dropdown-menu">
                                 <a class="dropdown-item" href="<?php echo base_url('scripts/FullVolumeOthers') ?>">Full Volume</a>
@@ -170,17 +158,12 @@
                     
                 </li>
             </ul>
-<!--            <div class="input-group">-->
+
             <form class="form-inline" action="<?php echo base_url('Search'); ?>" method="post" enctype="multipart/form-data">
                 <input type="text" class="form-control" placeholder="Search Song" name="searchSong" id="searchSong">
-            <!--                <span class="input-group-btn">-->
+           
                 <button class="btn btn-primary" type="submit">Search</button>
             </form>
-<!--                </span>-->
-<!--            </div>-->
-            
-
-    
 
         </div>
     </nav>

@@ -610,5 +610,131 @@ class Scripts extends CI_Controller {
         $data['main_content'] = $this->load->view('scripts/FerozaBegumSong', $data, TRUE);
         $this->load->view('index', $data); 
     }
+    
+    public function Letter(){
+        $data = array();
+        $data['page'] = 'Letter';
+        $data['page_title'] = 'Letter';
+        
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['Letter'] = $this->OthersSong_M->getLetter(); 
+        $total_records = sizeof($data['Letter']);
+        
+        $config['base_url'] = base_url() . 'scripts/Letter/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data["results"] = $this->OthersSong_M->get_current_script_Letter($limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+           
+        }
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('scripts/Letter', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function Script(){
+        $data = array();
+        $data['page'] = 'Script';
+        $data['page_title'] = 'Script';
+        
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['Script'] = $this->OthersSong_M->getScript(); 
+        $total_records = sizeof($data['Script']);
+        
+        $config['base_url'] = base_url() . 'scripts/Script/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data["results"] = $this->OthersSong_M->get_current_script_Script($limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+           
+        }
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('scripts/Script', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function Others(){
+        $data = array();
+        $data['page'] = 'Others';
+        $data['page_title'] = 'Others';
+        
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $this->load->library('pagination');
+        
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+        $data['Others'] = $this->OthersSong_M->getOthers(); 
+        $total_records = sizeof($data['Others']);
+        
+        $config['base_url'] = base_url() . 'scripts/Others/index';
+        $config['total_rows'] = $total_records;
+        $config['per_page'] = $limit_per_page;
+        $config["uri_segment"] = 4;
+        $config['num_links'] = 15;
+        
+        
+        if ($total_records > 0) 
+        {
+            // get current page records
+            
+            $data["results"] = $this->OthersSong_M->get_current_script_Others($limit_per_page, $start_index);
+            
+            $this->pagination->initialize($config);
+             
+            // build paging links
+            $data["links"] = $this->pagination->create_links();
+           
+        }
+        
+        
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('scripts/Others', $data, TRUE);
+        $this->load->view('index', $data);
+    }
 
 }
