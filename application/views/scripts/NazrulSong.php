@@ -81,195 +81,76 @@
                     echo '</div> '; ?>
                 <?php } ?>
                      <br>  <br>
+                        
+                     
                 </div>    
             </div>
             
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Nazrul Sangeet Song Book</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
+            <?php
+                $nRange = floor(($rangeYear[0]->Diff)/10 + 1);
+                
+                echo '<div class="row">';
+                echo '<div class="col-md-3" style="margin-bottom: 30px; margin-right: 10px;">  
+                                <div class="dropup">
+                                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="1">
+                                        FULL LIST
+                                    </button>  
 
-                        <div id="detailsList" class="modal-body">
-                            
-                        </div>
+                                    <div class="modal fade" id="myModal1" role="dialog">
+                                        <div class="modal-dialog">
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal fade" id="myModalSongBook" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Nazrul Sangeet Song Book </h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title" style="text-align: center">'.$page_title.'</h4>
+                                                    <h4 id="modalTitleControll" class="modal-title" style="text-align: center"></h4>
+                                                </div>
+                                                <div id="fullList" class="modal-body">
 
-                        <div id="fullList" class="modal-body">
-                            
-                        </div>
+                                                </div>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="modal fade" id="myModalSongBook7079" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Nazrul Sangeet Song Book (1970-1979)</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>
+                                            </div>
 
-                        <div id="fullList" class="modal-body">
-                            
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-           
-            
-            <div class="row">
-                <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
-                    <div class="dropup">
-                        <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook"  data-toggle="modal" data-node="1">
-                            FULL LIST
-                        </button>  
-
-                        <div class="modal fade" id="myModalS" role="dialog">
-                            <div class="modal-dialog">
-
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title" style="text-align: center">Nazrul Sangeet Song Book</h4>
-                                        <h4 id="modalTitleControll" class="modal-title" style="text-align: center"></h4>
-                                    </div>
-                                    <div id="scriptList" class="modal-body">
-
+                                        </div>
                                     </div>
 
                                 </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            
-
-            <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
-                <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook"  data-toggle="modal" data-node="2">
-                        1970-1979
-                    </button>  
-                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-                        <div class="songlist">
-                            Song List				
-                        </div>	 
-
-                        <div class="card-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                <span aria-hidden="true" style="color: black;">×</span>
-                            </button>
-
-                        </div>	
-                    </div>	
-                </div>
-            </div>
+                            </div>';
                 
+                for($i=0;$i<$nRange;$i++){
+                    if(strval(((int)($rangeYear[0]->MN))+$i*10)!='2010'){
+                        echo '<div class="col-md-3" style="margin-bottom: 30px; margin-right: 10px;"> <div class="dropup">';
+                        echo '<button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="'.strval(((int)($rangeYear[0]->MN))+$i*10)
+                        . '">'.strval(((int)($rangeYear[0]->MN))+$i*10).'-'.strval((((int)($rangeYear[0]->MN))+$i*10)+9).'</button>';   
+                        echo '</div></div>';
+                    }
+                    else{
+                        echo '<div class="col-md-3" style="margin-bottom: 30px; margin-right: 10px;"> <div class="dropup">';
+                        echo '<button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="'.strval(((int)($rangeYear[0]->MN))+$i*10).'">'.strval(((int)($rangeYear[0]->MN))+$i*10).'-'.strval((((int)($rangeYear[0]->MN))+$i*10)+4).'</button>';   
+                        echo '</div></div>';
+                    }
+                }
+                
+                echo '<div class="col-md-3" style="margin-bottom: 30px; margin-right: 10px;">  
+                                <div class="dropup">
+                                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModal1"  data-toggle="modal" data-node="2">
+                                        Others
+                                    </button>  
 
-            <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
-                <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook" data-toggle="modal" data-node="3">
-                        1980-1989
-                    </button>  
-                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-                         
+                                    
 
-                        <div class="card-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                <span aria-hidden="true" style="color: black;">×</span>
-                            </button>
-
-                        </div>	
-                    </div>	
-                </div>
-            </div>
-
-            <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
-                <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook" data-toggle="modal" data-node="4">
-                        1990-1999
-                    </button>  
-                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-                        	 
-
-                        <div class="card-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                <span aria-hidden="true" style="color: black;">×</span>
-                            </button>
-  
-                        </div>	
-                    </div>	
-                </div>
-            </div>
-
-            <div class="col-md-2" style="margin-bottom: 30px; margin-right: 10px;">  
-                <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook" data-toggle="modal" data-node="5">
-                        2000-2014
-                    </button>  
-                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-                        <div class="songlist">
-                            Song List				
-                        </div>	 
-
-                        <div class="card-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                <span aria-hidden="true" style="color: black;">×</span>
-                            </button>
-
-                        </div>	
-                    </div>	
-                </div>
-            </div>
-
-            <div class="col-md-1" style="margin-bottom: 30px; margin-right: 10px;">  
-                <div class="dropup">
-                    <button class="btn btn-custom scriptButton" type="button" id="about-us" data-target="#myModalSongBook" data-toggle="modal" data-node="6">
-                        Others
-                    </button>  
-                    <div class="dropdown-menu f_dropdown-menu-right" style=" background-color: #fff;width:550px;">
-                        <div class="songlist">
-                            Song List				
-                        </div>	 
-
-                        <div class="card-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding-right: 10px;">
-                                <span aria-hidden="true" style="color: black;">×</span>
-                            </button>
-
-                        </div>	
-                    </div>	
-                </div>
-            </div>
+                                </div>
+                            </div>';
+                
+                
+                echo '</div>';
+                ?>
+            
+            
+                
+            
+            
     
             </div>
         </div>

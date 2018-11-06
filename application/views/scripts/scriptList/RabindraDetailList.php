@@ -17,7 +17,7 @@
         . $FullSongBookList[$i]->Album01
         . '.jpg" class = "imageboxX"></a>'
         .'<div class="w3-display-center w3-container w3-padding-16 w3-feroza">'
-        .$FullSongBookList[$i]->NazrulSangeetLyricsStuffNotation
+        .$FullSongBookList[$i]->RabindraSangeetLyrics
         .'</div>'
         .'<div class="w3-display-center w3-container w3-padding-16 w3-feroza">'
         .'Year:'

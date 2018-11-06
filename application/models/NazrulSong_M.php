@@ -292,6 +292,35 @@ class NazrulSong_M extends CI_Model {
         return false;
     }
     
+    function getRangeYearSong($Category,$filter){
+        
+        if($filter=='NazrulSong'){
+            $sql = "SELECT MIN(Year) as MN,MAX(Year) as MX,MAX(Year) - MIN(Year) as Diff"
+                    . " FROM `ferozatable` WHERE NazrulSangeetLyrics !='' and Album01C !='' and Category='$Category' and Year !='Undated'";
+            $query =  $this->db->query($sql);
+            return $query->result();
+        }
+        if($filter=='NazrulSongScript'){
+            $sql = "SELECT MIN(Year) as MN,MAX(Year) as MX,MAX(Year) - MIN(Year) as Diff"
+                    . " FROM `ferozatable` WHERE NazrulSangeetLyricsStuffNotation !='' and Album01C !='' and Category='$Category' and Year !='Undated'";
+            $query =  $this->db->query($sql);
+            return $query->result();
+        }
+        if($filter=='RabindraSong'){
+            $sql = "SELECT MIN(Year) as MN,MAX(Year) as MX,MAX(Year) - MIN(Year) as Diff"
+                    . " FROM `ferozatable` WHERE RabindraSangeetLyrics !='' and Album01C !='' and Category='$Category' and Year !='Undated'";
+            $query =  $this->db->query($sql);
+            return $query->result();
+        }
+        if($filter='ModernBengaliSong'){
+            $sql = "SELECT MIN(Year) as MN,MAX(Year) as MX,MAX(Year) - MIN(Year) as Diff"
+                    . " FROM `ferozatable` WHERE ModernBengaliSongLyrics !='' and Album01C !='' and Category='$Category' and Year !='Undated'";
+            $query =  $this->db->query($sql);
+            return $query->result();
+            
+        }
+    }
+    
     function getRangeYear($page_title){
         $sql = "SELECT TRUNCATE(MIN(ReleaseYearAlbum),-1) as MN,TRUNCATE(MAX(ReleaseYearAlbum),-1) as MX,"
                 . " TRUNCATE(MAX(ReleaseYearAlbum),-1) - TRUNCATE(MIN(ReleaseYearAlbum),-1) as Diff"
@@ -311,29 +340,32 @@ class NazrulSong_M extends CI_Model {
     }
     
     function getFullSongBookList($SongbookID,$bookID){
+        
+        if($SongbookID>1900 && $bookID==1){
+            $rSongYear = $SongbookID+9;
+            $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
+                where Header='Songbook' and Category='Feroza Begum' 
+                and NazrulSangeetLyrics !=''  and CAST(Year as decimal(10,5)) BETWEEN '$SongbookID' and '$rSongYear'
+               ";
+            $query =  $this->db->query($sql);
+        }
+        
         if($SongbookID==1 && $bookID==1){
             $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
                 where Header='Songbook' and Category='Feroza Begum' 
-                and NazrulSangeetLyrics !='' and Album01C !=''
+                and NazrulSangeetLyrics !='' 
                ";
             $query =  $this->db->query($sql);
         }
         if($SongbookID==2 && $bookID==1){
             $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
                     where Header='Songbook' and Category='Feroza Begum' 
-                    and NazrulSangeetLyrics !='' and Album01C !=''
-                    and CAST(Year as decimal(10,5)) BETWEEN '1970' and '1979'
+                    and NazrulSangeetLyrics !='' 
+                    and Year = 'Undated'
                 ";
             $query =  $this->db->query($sql);
         }
-        if($SongbookID==2 && $bookID==1){
-            $sql = "SELECT ID,Year,Album01,Album01C,NazrulSangeetLyrics FROM `ferozatable`
-                    where Header='Songbook' and Category='Feroza Begum' 
-                    and NazrulSangeetLyrics !='' and Album01C !=''
-                    and CAST(Year as decimal(10,5)) BETWEEN '1980' and '1989'
-                ";
-            $query =  $this->db->query($sql);
-        }
+        
         return $query->result();
     }
     
@@ -627,59 +659,132 @@ class NazrulSong_M extends CI_Model {
         return $query->result();
     }
     
-    function getDetailScriptList($listID){
-        if($listID == 1){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages'";
+    function getDetailScriptList($SongbookID,$script_id){
+        if($SongbookID>1900 && $script_id==1){
+            $rSongYear = $SongbookID+9;
+            $sql = "SELECT ID,Year,Album01,RabindraSangeetLyrics FROM `ferozatable`
+                where Header='Songbook' and Category='Feroza Begum' 
+                and RabindraSangeetLyrics !='' and CAST(Year as decimal(10,5)) BETWEEN '$SongbookID' and '$rSongYear'
+               ";
             $query =  $this->db->query($sql);
         }
-        if($listID == 2){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1970' and '1979'";
+        
+        if($SongbookID==1 && $script_id==1){
+            $sql = "SELECT ID,Year,Album01,RabindraSangeetLyrics FROM `ferozatable`
+                where Header='Songbook' and Category='Feroza Begum' 
+                and RabindraSangeetLyrics !='' 
+               ";
             $query =  $this->db->query($sql);
         }
-        if($listID == 3){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1980' and '1989' ";
+        if($SongbookID==2 && $script_id==1){
+            $sql = "SELECT ID,Year,Album01,RabindraSangeetLyrics FROM `ferozatable`
+                    where Header='Songbook' and Category='Feroza Begum' 
+                    and RabindraSangeetLyrics !=''
+                    and Year = 'Undated'
+                ";
             $query =  $this->db->query($sql);
         }
-        if($listID == 4){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
+        if($SongbookID>1900 && $script_id==2){
+            $rSongYear = $SongbookID+9;
+            $sql = "SELECT ID,Year,Album01,RabindraSangeetLyrics FROM `ferozatable`
+                where Header='Songbook' and Category='Feroza Begum' 
+                and ModernBengaliSongLyrics !='' and CAST(Year as decimal(10,5)) BETWEEN '$SongbookID' and '$rSongYear'
+               ";
             $query =  $this->db->query($sql);
         }
-        if($listID == 5){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
+        
+        if($SongbookID==1 && $script_id==2){
+            $sql = "SELECT ID,Year,Album01,RabindraSangeetLyrics FROM `ferozatable`
+                where Header='Songbook' and Category='Feroza Begum' 
+                and ModernBengaliSongLyrics !='' 
+               ";
             $query =  $this->db->query($sql);
         }
-        if($listID == 6){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year ='Undated'";
+        if($SongbookID==2 && $script_id==2){
+            $sql = "SELECT ID,Year,Album01,RabindraSangeetLyrics FROM `ferozatable`
+                    where Header='Songbook' and Category='Feroza Begum' 
+                    and ModernBengaliSongLyrics !=''
+                    and Year = 'Undated'
+                ";
             $query =  $this->db->query($sql);
         }
+        
+//        if($listID == 1){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages'";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 2){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1970' and '1979'";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 3){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1980' and '1989' ";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 4){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 5){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 6){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and Year ='Undated'";
+//            $query =  $this->db->query($sql);
+//        }
         return $query->result();
     }
     
-    function getDetailStuffNotationList($listID){
-        if($listID == 1){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !=''";
+    function getDetailStuffNotationList($SongbookID){
+        if($SongbookID>1900){
+            $rSongYear = $SongbookID+9;
+            $sql = "SELECT ID,Year,Album01,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
+                where Header='Songbook' and Category='Feroza Begum' 
+                and NazrulSangeetLyricsStuffNotation !='' and CAST(Year as decimal(10,5)) BETWEEN '$SongbookID' and '$rSongYear'
+               ";
             $query =  $this->db->query($sql);
         }
-        if($listID == 2){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1970' and '1979'";
+        
+        if($SongbookID==1){
+            $sql = "SELECT ID,Year,Album01,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
+                where Header='Songbook' and Category='Feroza Begum' 
+                and NazrulSangeetLyricsStuffNotation !='' 
+               ";
             $query =  $this->db->query($sql);
         }
-        if($listID == 3){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1980' and '1989' ";
+        if($SongbookID==2){
+            $sql = "SELECT ID,Year,Album01,NazrulSangeetLyricsStuffNotation FROM `ferozatable`
+                    where Header='Songbook' and Category='Feroza Begum' 
+                    and NazrulSangeetLyricsStuffNotation !=''
+                    and Year = 'Undated'
+                ";
             $query =  $this->db->query($sql);
         }
-        if($listID == 4){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
-            $query =  $this->db->query($sql);
-        }
-        if($listID == 5){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
-            $query =  $this->db->query($sql);
-        }
-        if($listID == 6){
-            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year ='Undated'";
-            $query =  $this->db->query($sql);
-        }
+//        if($listID == 1){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !=''";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 2){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1970' and '1979'";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 3){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1980' and '1989' ";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 4){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '1990' and '1999' ORDER BY ReleaseYearAlbum";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 5){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year!='Undated' and CAST(Year as decimal(10,5)) BETWEEN '2000' and '2014' ORDER BY ReleaseYearAlbum";
+//            $query =  $this->db->query($sql);
+//        }
+//        if($listID == 6){
+//            $sql = "SELECT Album01,ID FROM `ferozatable` where Header='Songbook' and SubCategory = 'Single Pages' and NazrulSangeetLyricsStuffNotation !='' and Year ='Undated'";
+//            $query =  $this->db->query($sql);
+//        }
         return $query->result();
     }
     
@@ -699,13 +804,12 @@ class NazrulSong_M extends CI_Model {
     }
     
     function getScriptDetailsList($detailsID){
-        //$sql = "SELECT * FROM ferozatable WHERE Script01= '" . $detailsID."' or Script02='" . $detailsID."'  or Script03 = '" . $detailsID."' or Script04='" . $detailsID."'";
-        $sql = "SELECT * FROM ferozatable WHERE Album01 = '" . $detailsID."'";// or Script02='" . $detailsID."'  or Script03 = '" . $detailsID."' or Script04='" . $detailsID."'";
-         
+        
+        
+        $sql = "SELECT * FROM ferozatable WHERE Album01 = '" . $detailsID."'";
         $query =  $this->db->query($sql);
-        
-        
         return $query->result();
+        
     }
     
     function getInfoDetailsList($script_id){

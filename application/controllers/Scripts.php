@@ -60,23 +60,52 @@ class Scripts extends CI_Controller {
     }
     
     public function getScriptListWithID(){
-        $scriptListID = $this->input->get('scriptListID',TRUE);
-        $data['detailScriptList'] = $this->NazrulSong_M->getDetailScriptList($scriptListID);
         
-        echo $this->load->view('scripts/detailScriptList',$data, TRUE);
+        
+        $SongbookID = $this->input->get('scriptListID',TRUE);
+        $script_id = $this->input->get('script_id',TRUE);
+        
+        $data['FullSongBookList'] =$this->NazrulSong_M->getDetailScriptList($SongbookID,$script_id);
+        
+        if($SongbookID == 1){
+            $data['title'] = "Full List";
+        }
+        if($SongbookID == 2){
+            $data['title'] = "Others";
+        }
+        if($SongbookID > 1900){
+            $data['title'] = $SongbookID."-".($SongbookID+9);
+        }
+        
+        
+        echo $this->load->view('scripts/scriptList/RabindraDetailList',$data, TRUE);
     }
     
     public function getStuffNotationWithID(){
-        $scriptListID = $this->input->get('scriptListID',TRUE);
-        $data['detailScriptList'] = $this->NazrulSong_M->getDetailStuffNotationList($scriptListID);
+        $SongbookID = $this->input->get('scriptListID',TRUE);
         
-        echo $this->load->view('scripts/detailScriptList',$data, TRUE);
+        $data['FullSongBookList'] =$this->NazrulSong_M->getDetailStuffNotationList($SongbookID);
+        
+        if($SongbookID == 1){
+            $data['title'] = "Full List";
+        }
+        if($SongbookID == 2){
+            $data['title'] = "Others";
+        }
+        if($SongbookID > 1900){
+            $data['title'] = $SongbookID."-".($SongbookID+9);
+        }
+        
+        
+        echo $this->load->view('scripts/scriptList/detailList',$data, TRUE);
     }
     
     public function NazrulSong(){
         $data = array();
         $data['page'] = 'Nazrul Song';
         $data['page_title'] = 'Nazrul Song';
+        $Category = 'Feroza Begum';
+        $filter = 'NazrulSong';
         
         $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
         $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
@@ -107,7 +136,7 @@ class Scripts extends CI_Controller {
            
         }
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYearSong($Category,$filter);
         
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('scripts/NazrulSong', $data, TRUE);
@@ -144,6 +173,8 @@ class Scripts extends CI_Controller {
         $data = array();
         $data['page'] = 'Nazrul Sangeet with Stuff Notation';
         $data['page_title'] = 'Nazrul Sangeet with Stuff Notation';
+        $Category = 'Feroza Begum';
+        $filter = 'NazrulSongScript';
         
         $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
         $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
@@ -174,7 +205,7 @@ class Scripts extends CI_Controller {
            
         }
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYearSong($Category,$filter);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('scripts/NazrulSongScript', $data, TRUE);
         $this->load->view('index', $data);
@@ -184,6 +215,8 @@ class Scripts extends CI_Controller {
         $data = array();
         $data['page'] = 'Rabindra Song';
         $data['page_title'] = 'Rabindra Song';
+        $Category = 'Feroza Begum';
+        $filter = 'RabindraSong';
         
         $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
         $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
@@ -214,7 +247,7 @@ class Scripts extends CI_Controller {
             $data["links"] = $this->pagination->create_links();
            
         }
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYearSong($Category,$filter);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('scripts/RabindraSong', $data, TRUE);
         $this->load->view('index', $data);
@@ -264,6 +297,8 @@ class Scripts extends CI_Controller {
         $data = array();
         $data['page'] = 'Modern Bengali Song';
         $data['page_title'] = 'Modern Bengali Song';
+        $Category = 'Feroza Begum';
+        $filter = 'ModernBengaliSong';
         
         
         $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
@@ -296,7 +331,7 @@ class Scripts extends CI_Controller {
            
         }
         
-        
+        $data['rangeYear'] = $this->NazrulSong_M->getRangeYearSong($Category,$filter);
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('scripts/ModernBengaliSong', $data, TRUE);
         $this->load->view('index', $data);
@@ -560,11 +595,12 @@ class Scripts extends CI_Controller {
             $data['title'] = "Full List";
         }
         if($SongbookID == 2){
-            $data['title'] = "1970-79";
+            $data['title'] = "Others";
         }
-        if($SongbookID == 2){
-            $data['title'] = "1980-89";
+        if($SongbookID > 1900){
+            $data['title'] = $SongbookID."-".($SongbookID+9);
         }
+        
        // $data['songListID'] = $songListID;
         
         echo $this->load->view('scripts/scriptList/FullList',$data, TRUE);

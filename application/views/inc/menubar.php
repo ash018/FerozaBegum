@@ -121,7 +121,7 @@
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/NazrulSong') ?>">Nazrul Sangeet Lyrics</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/NazrulSongScript') ?>">Nazrul Sangeet Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/RabindraSong') ?>">Rabindra Sangeet Lyrics</a>
-                                    <a class="dropdown-item" href="<?php echo base_url('scripts/RabindraSong') ?>">Rabindra Sangeet Lyrics & Staff Notation</a>
+<!--                                    <a class="dropdown-item" href="<?php //echo base_url('scripts/RabindraSong') ?>">Rabindra Sangeet Lyrics & Staff Notation</a>-->
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/ModernBengaliSong') ?>">Modern Bengali Song Lyrics</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/ModernBengaliLyricsStuffNotation') ?>">Modern Bengali Song Lyrics & Staff Notation</a>
                                     <a class="dropdown-item" href="<?php echo base_url('scripts/FerozaBegumSong') ?>">Feroza Begum's Song</a>
