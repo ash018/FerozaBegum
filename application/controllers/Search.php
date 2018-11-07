@@ -14,16 +14,31 @@ class Search extends CI_Controller {
     
     public function index() {
         
-//        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
-//        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+        
+        $root=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== "off" ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+        $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
         
         $data = array();
+        $data['page'] = 'Music';
+        $data['page_title'] = 'Music';
+        $page_title = 'Search';
+       
         
         $searchSong = $this->input->post('searchSong',TRUE);
         
-        //echo $searchSong;
         
-        $data["results"] = $this->Search_M->getSearchSong($searchSong);
+        $data['searchSong'] = $searchSong;
+        $limit_per_page = 10;
+        $start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        if($searchSong!=''){
+            $data['results'] = $this->Search_M->getSearchSong($searchSong);
+            
+           
+
+        }
+        else{
+            $data["results"] = null;
+        }
         
         
         
@@ -40,8 +55,7 @@ class Search extends CI_Controller {
          if (isset($_POST)) {
             $searchSong = $this->input->post('searchSong',TRUE);
          }
-        echo $searchSong;
-        
+        echo $searchSong; 
     }
 }
 ?>

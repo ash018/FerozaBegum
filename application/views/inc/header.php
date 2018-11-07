@@ -10,6 +10,8 @@
        
         <title><?php echo $page;?></title>
         
+       
+        
         <!-- Bootstrap core CSS -->
         <link href="<?php echo base_url();?>asset/css/bootstrap.css" rel="stylesheet">
 

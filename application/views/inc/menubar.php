@@ -161,7 +161,6 @@
 
             <form class="form-inline" action="<?php echo base_url('Search'); ?>" method="post" enctype="multipart/form-data">
                 <input type="text" class="form-control" placeholder="Search Song" name="searchSong" id="searchSong">
-           
                 <button class="btn btn-primary" type="submit">Search</button>
             </form>
 

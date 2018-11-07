@@ -1,3 +1,27 @@
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+    .pagination a.active {
+        background-color: #4CAF50;
+        color: red;
+    }
+
+    .pagination a:hover:not(.active) {background-color: #33B5E5;}
+</style>
+
+<div class="f_top_margin_30"></div>
+<div class="col-md-12 line"></div>
+<div class="container-fluid" style="background-color: #8e8e98"></div>
+
+
 <?php
 
 /*
@@ -8,8 +32,7 @@
 //echo $results[0]->LiveLink;
 
 
-
-if (sizeof($results) == 0) {
+if (!($results)) {
     echo '<div class="container">';
     echo '<h1>No Song Found</h1>';
     echo '</div>';
@@ -23,7 +46,7 @@ else {
     echo '      <div class = "row">';
     
     $i = 0;
-    //var_dump($results);
+    
     while ($i < (sizeof($results))) {
         //echo $results[$i]->LiveLink; 
         $id = substr($results[$i]->LiveLink, strrpos($results[$i]->LiveLink, '/') + 1);
@@ -47,10 +70,14 @@ else {
     }
     echo '</div>';
     echo '</div>';
-}
     
-
+    
+    
+    
+}
 ?>
+
+
 
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -75,7 +102,10 @@ else {
 <script src="/ferozabegum/asset/js/modulesupportjs/feroza.js"></script>
 <script type="text/javascript">
         $(document).ready(function () {
-        
+            
+        var song = "<?php echo $searchSong; ?>"; 
+        $("#searchSong").text(song);
+        console.log('song->'+song);
         $(".detailsButton").click(function(){
         var baseUrl = "<?php echo base_url(); ?>"; 
         $("#detailsList").empty();
