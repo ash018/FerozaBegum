@@ -23,7 +23,7 @@
 
 
 <?php
-
+//var_dump($searchSong);
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -41,7 +41,7 @@ if (!($results)) {
 else {
     //var_dump($results);
     echo '<div class ="container">';
-    echo '<h1>Total '.sizeof($results).' Songs Found.';
+    echo '<h1>Total '.sizeof($song).' Songs Found.';
     echo '<br><br>';
     echo '      <div class = "row">';
     
@@ -71,9 +71,26 @@ else {
     echo '</div>';
     echo '</div>';
     
-    
-    
-    
+    echo '<div class="row">
+                <div class="col-md-12">
+                    <div class="container"> 
+                        <div class="row">
+                            <div class="musicheader">';
+                               
+                                if (isset($links)) {
+                                    echo '<h4 style = "font-family:Trebuchet MS;">Page List</h4>'; 
+                                    
+                                    
+                                    echo'<div class="pagination">';
+                                    echo $links;
+                                    echo '</div> ';
+                                    
+                                 }
+                            echo '</div>
+                        </div>         
+                    </div>    
+                </div>
+            </div>';
 }
 ?>
 
@@ -104,7 +121,7 @@ else {
         $(document).ready(function () {
             
         var song = "<?php echo $searchSong; ?>"; 
-        $("#searchSong").text(song);
+        $("#searchSong").val(song);
         console.log('song->'+song);
         $(".detailsButton").click(function(){
         var baseUrl = "<?php echo base_url(); ?>"; 

@@ -156,8 +156,8 @@ class Scripts extends CI_Controller {
         //Check Script Code Here
         //echo $detailsID;
        // $data['detailsList'] = $this->NazrulSong_M->getScriptDetailsList($detailsID);
-        $data['infoList'] = $this->NazrulSong_M->getInfoDetailsList($detailsID);
-        $data['rowCount']= sizeof($data['infoList']);
+        $data['FullSongBookList'] = $this->NazrulSong_M->getInfoDetailsList($detailsID);
+        $data['rowCount']= sizeof($data['FullSongBookList']);
         //echo sizeof($data['infoList']);
         $data['detailsID'] = $detailsID;
         echo $this->load->view('scripts/scriptList/detailList',$data, TRUE);
@@ -173,6 +173,7 @@ class Scripts extends CI_Controller {
         $data['rowCount']= sizeof($data['infoList']);
         //echo sizeof($data['infoList']);
         $data['detailsID'] = $detailsID;
+        
         echo $this->load->view('scripts/scriptList/detailList',$data, TRUE);
     }
     

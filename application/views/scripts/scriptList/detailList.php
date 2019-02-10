@@ -1,4 +1,4 @@
-<h1><?php echo $title;?></h1>
+<h1><?php //echo $title;?></h1>
 <?php 
 
     $sizeSongBook = sizeof($FullSongBookList);
@@ -26,8 +26,8 @@
         .'</div>';
     }
     
-    echo '<button class="w3-button w3-feroza w3-display-left" onclick="plusDivs(-1)">&#10094;</button>';
-    echo '<button class="w3-button w3-feroza w3-display-right" onclick="plusDivs(1)">&#10095;</button>';
+    //echo '<button class="w3-button w3-feroza w3-display-left" onclick="plusDivs(-1)">&#10094;</button>';
+    //echo '<button class="w3-button w3-feroza w3-display-right" onclick="plusDivs(1)">&#10095;</button>';
 
 
    
