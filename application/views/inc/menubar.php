@@ -72,10 +72,17 @@
                         PROGRAMME
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="<?php echo base_url('programme/tvProgram'); ?>">TV Program</a></li>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" >TV Program</a>
+                            <ul class="dropdown-menu">
+                                <a class="dropdown-item" href="<?php echo base_url('programme/tvProgramFB'); ?>">Feroza Begum</a>
+                                <a class="dropdown-item" href="<?php echo base_url('programme/Memoire'); ?>">Mémoire</a>
+                                <a class="dropdown-item" href="<?php echo base_url('programme/talkShow'); ?>">Talk Show </a>
+                            </ul>
+                        </li>
+<!--                        <li><a class="dropdown-item" href="<?php //echo base_url('programme/tvProgram'); ?>">TV Program</a></li>-->
 
 
-                        <li><a class="dropdown-item" href="<?php echo base_url('programme/videoFootage'); ?>">Radio Program</a>
+                        <li><a class="dropdown-item" href="<?php echo base_url('programme/radioProgram'); ?>">Radio Program</a>
 
                         </li>
 

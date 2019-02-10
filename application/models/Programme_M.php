@@ -12,8 +12,24 @@ class Programme_M extends CI_Model{
         $this->load->database();
     }
     
+    
+    public function getTvProgramFB($program,$programCat){
+        $sql = "SELECT * FROM programmenew WHERE ProgramType = '$program' AND ProgramCategory='$programCat' ";
+        $query =  $this->db->query($sql);
+        if ($query->num_rows() > 0) 
+        {
+            foreach ($query->result() as $row) 
+            {
+                $data[] = $row;
+            }
+             
+            return $data;
+        }
+        return false;
+    }
+    
     public function getTvProgram($program){
-        $sql = "SELECT * FROM programme WHERE ProgramType = '$program' ";
+        $sql = "SELECT * FROM programmenew WHERE ProgramType = '$program' ";
         $query =  $this->db->query($sql);
         if ($query->num_rows() > 0) 
         {
@@ -28,7 +44,7 @@ class Programme_M extends CI_Model{
     }
     
     public function getVideoFootage($program){
-        $sql = "SELECT * FROM programme WHERE ProgramType = '$program' ";
+        $sql = "SELECT * FROM programmenew WHERE ProgramType = '$program' ";
         $query =  $this->db->query($sql);
         if ($query->num_rows() > 0) 
         {
@@ -43,7 +59,7 @@ class Programme_M extends CI_Model{
     }
     
     public function getStageShow($program){
-        $sql = "SELECT * FROM programme WHERE ProgramType = '$program' ";
+        $sql = "SELECT * FROM programmenew WHERE ProgramType = '$program' ";
         
         $query =  $this->db->query($sql);
         if ($query->num_rows() > 0) 
@@ -59,7 +75,7 @@ class Programme_M extends CI_Model{
     }
     
     public function getFullProgramList($programListID){
-        $sql = "SELECT * FROM programme WHERE EntryCode = '$programListID'";
+        $sql = "SELECT * FROM programmenew WHERE EntryCode = '$programListID'";
         $query =  $this->db->query($sql);
         return $query->result();
     }

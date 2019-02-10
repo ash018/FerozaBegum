@@ -1,30 +1,33 @@
-<h1><?php //echo $title;?></h1>
+<h1><?php ?></h1>
 <?php 
 
     $sizeSongBook = sizeof($FullSongBookList);
     echo '<div class="w3-content w3-display-container">';
     
-    for($i=0;$i<$sizeSongBook;$i++){
-        echo '<div class="w3-display-container mySlides">'
-        .'<a target="_blank" href="'
-        . base_url()
-        . 'asset/img/NB/'
-        . $FullSongBookList[$i]->Album01
-        . '.jpg" data-fancybox data-caption="My caption">'
-        . '<img src="'
-        . base_url()
-        . 'asset/img/NB/'
-        . $FullSongBookList[$i]->Album01
-        . '.jpg" class = "imageboxX"></a>'
-        .'<div class="w3-display-center w3-container w3-padding-16 w3-feroza">'
-        .$FullSongBookList[$i]->NazrulSangeetLyricsStuffNotation
-        .'</div>'
-        .'<div class="w3-display-center w3-container w3-padding-16 w3-feroza">'
-        .'Year:'
-        .$FullSongBookList[$i]->Year
-        .'</div>'
-        .'</div>';
-    }
+    //if($title=='NazrulSong'){
+    
+        for($i=0;$i<$sizeSongBook;$i++){
+            echo '<div class="w3-display-container mySlides">'
+            .'<a target="_blank" href="'
+            . base_url()
+            . 'asset/img/NB/'
+            . $FullSongBookList[$i]->Album01
+            . '.jpg" data-fancybox data-caption="My caption">'
+            . '<img src="'
+            . base_url()
+            . 'asset/img/NB/'
+            . $FullSongBookList[$i]->Album01
+            . '.jpg" class = "imageboxX"></a>'
+            .'<div class="w3-display-center w3-container w3-padding-16 w3-feroza">'
+            .$FullSongBookList[$i]->NazrulSangeetLyrics
+            .'</div>'
+            .'<div class="w3-display-center w3-container w3-padding-16 w3-feroza">'
+            .'Year:'
+            .$FullSongBookList[$i]->Year
+            .'</div>'
+            .'</div>';
+        }
+   // }
     
     //echo '<button class="w3-button w3-feroza w3-display-left" onclick="plusDivs(-1)">&#10094;</button>';
     //echo '<button class="w3-button w3-feroza w3-display-right" onclick="plusDivs(1)">&#10095;</button>';

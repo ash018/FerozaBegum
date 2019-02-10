@@ -190,8 +190,8 @@
         $("#detailsList").empty();
         var detailsID = $(this).attr('data-node');
         var script_id = $(this).attr('id');
-        var data = { 'detailsID': detailsID , 'script_id': script_id};
-    
+        var data = { 'detailsID': detailsID , 'script_id': script_id,'title':'NazrulSong'};
+        
         console.log("Data Node:"+detailsID);
         console.log("Script ID"+script_id);
         $.ajax({

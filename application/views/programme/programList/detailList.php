@@ -17,8 +17,16 @@
         echo '<h7><strong>Program Location Channel: </strong>' . $ProgramList[0]->ProgramLocationChannel . '</h7><br>';
     }
     
-    if ($ProgramList[0]->AlbumFormat != '') {
-        echo '<h7><strong>Album Format: </strong>' . $ProgramList[0]->AlbumFormat . '</h7><br>';
+    if ($ProgramList[0]->ProgramType != '') {
+        echo '<h7><strong>Program Type: </strong>' . $ProgramList[0]->ProgramType . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->ProgramCategory != '') {
+        echo '<h7><strong>Program Category: </strong>' . $ProgramList[0]->ProgramCategory . '</h7><br>';
+    }
+    
+    if ($ProgramList[0]->RecordingFormat != '') {
+        echo '<h7><strong>Recording Format: </strong>' . $ProgramList[0]->RecordingFormat . '</h7><br>';
     }
     
     if ($ProgramList[0]->Genre != '') {
@@ -45,9 +53,6 @@
         echo '<h7><strong>Music Comproser: </strong>' . $ProgramList[0]->MusicComproser . '</h7><br>';
     }
     
-    if ($ProgramList[0]->MusicArranger != '') {
-        echo '<h7><strong>Music Arranger: </strong>' . $ProgramList[0]->MusicArranger . '</h7><br>';
-    }
     
     if ($ProgramList[0]->MusicDirector != '') {
         echo '<h7><strong>Music Arranger: </strong>' . $ProgramList[0]->MusicDirector . '</h7><br>';
@@ -57,13 +62,14 @@
         echo '<h7><strong>Sound Recordist: </strong>' . $ProgramList[0]->SoundRecordist . '</h7><br>';
     }
     
-    if ($ProgramList[0]->RecordingStudio != '') {
-        echo '<h7><strong>Recording Studio: </strong>' . $ProgramList[0]->RecordingStudio . '</h7><br>';
+    if ($ProgramList[0]->ProgramEditor != '') {
+        echo '<h7><strong>Program Editor: </strong>' . $ProgramList[0]->ProgramEditor . '</h7><br>';
     }
     
-    if ($ProgramList[0]->Producer != '') {
-        echo '<h7><strong>Producer: </strong>' . $ProgramList[0]->Producer . '</h7><br>';
+    if ($ProgramList[0]->ProducerExecutiveProducer != '') {
+        echo '<h7><strong>Producer / ExecutiveProducer: </strong>' . $ProgramList[0]->ProducerExecutiveProducer . '</h7><br>';
     }
+    
     
     if ($ProgramList[0]->Production != '') {
         echo '<h7><strong>Production: </strong>' . $ProgramList[0]->Production . '</h7><br>';

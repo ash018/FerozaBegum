@@ -18,8 +18,45 @@ class Programme extends CI_Controller {
         $data['page_title'] = 'Programme';
         //$data['userid'] = $this->session->userdata('userid');
         //$data['UserName'] = $this->session->userdata('UserName');
+        
         $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
         $data['main_content'] = $this->load->view('programme/stage/english_v', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function tvProgramFB(){
+        $data = array();
+        $data['page'] = 'TV Program';
+        $data['page_title'] = 'Feroza Begum';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['tvProgram'] = $this->Programme_M->getTvProgramFB($data['page'],$data['page_title']);
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('programme/stage/tvProgramme', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function Memoire(){
+        $data = array();
+        $data['page'] = 'TV Program';
+        $data['page_title'] = 'Memoire';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['tvProgram'] = $this->Programme_M->getTvProgramFB($data['page'],$data['page_title']);
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('programme/stage/tvProgramme', $data, TRUE);
+        $this->load->view('index', $data);
+    }
+    
+    public function talkShow(){
+        $data = array();
+        $data['page'] = 'TV Program';
+        $data['page_title'] = 'Talk Show';
+        //$data['userid'] = $this->session->userdata('userid');
+        //$data['UserName'] = $this->session->userdata('UserName');
+        $data['tvProgram'] = $this->Programme_M->getTvProgramFB($data['page'],$data['page_title']);
+        $data['menubar'] = $this->load->view('inc/menubar', $data, TRUE);
+        $data['main_content'] = $this->load->view('programme/stage/tvProgramme', $data, TRUE);
         $this->load->view('index', $data);
     }
     
@@ -41,10 +78,10 @@ class Programme extends CI_Controller {
         echo $this->load->view('programme/programList/detailList',$data, TRUE);
     }
     
-    public function videoFootage(){
+    public function radioProgram(){
         $data = array();
-        $data['page'] = 'Video Footage';
-        $data['page_title'] = 'Video Footage';
+        $data['page'] = 'Radio Program';
+        $data['page_title'] = 'Radio Program';
         //$data['userid'] = $this->session->userdata('userid');
         //$data['UserName'] = $this->session->userdata('UserName');
         $data['videoFootage'] = $this->Programme_M->getVideoFootage($data['page_title']);

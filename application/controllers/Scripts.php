@@ -153,6 +153,7 @@ class Scripts extends CI_Controller {
     public function getScriptDetailsList(){
         $detailsID = $this->input->get('detailsID',TRUE);
         $script_id = $this->input->get('script_id',TRUE);
+        $data['title'] = $this->input->get('title',TRUE);
         //Check Script Code Here
         //echo $detailsID;
        // $data['detailsList'] = $this->NazrulSong_M->getScriptDetailsList($detailsID);
